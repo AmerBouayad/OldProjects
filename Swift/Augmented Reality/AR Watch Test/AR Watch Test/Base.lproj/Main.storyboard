@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H7v-qB-9Ye">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AR_Watch_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lut-Tx-v9I">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Lut-Tx-v9I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aDQ-Xf-2Oi"/>
+                            <constraint firstItem="Lut-Tx-v9I" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bEV-U4-vZH"/>
+                            <constraint firstItem="Lut-Tx-v9I" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jtE-Yv-lKs"/>
+                            <constraint firstItem="Lut-Tx-v9I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rZM-eC-dbW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="Lut-Tx-v9I" id="j7f-iG-ALC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="129"/>
+        </scene>
+        <!--Selection Watch Collection-->
+        <scene sceneID="wh6-uG-zZK">
+            <objects>
+                <viewController id="M9y-wQ-L1d" customClass="SelectionWatchCollection" customModule="AR_Watch_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xi5-Eq-Yyc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ksc-eu-KvE">
+                                <rect key="frame" x="0.0" y="144" width="414" height="518"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cIS-bm-ezB">
+                                    <size key="itemSize" width="261" height="517"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="9FG-Bu-ZjT" customClass="MyCollectionViewCell" customModule="AR_Watch_Test" customModuleProvider="target">
+                                        <rect key="frame" x="76.5" y="0.0" width="261" height="517"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SHJ-hQ-F6H">
+                                            <rect key="frame" x="0.0" y="0.0" width="261" height="517"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="261" height="517"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="delegate" destination="M9y-wQ-L1d" id="km4-k3-PrS"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ksc-eu-KvE" firstAttribute="leading" secondItem="O9f-ky-bZb" secondAttribute="leading" id="MMO-K9-lEm"/>
+                            <constraint firstItem="O9f-ky-bZb" firstAttribute="bottom" secondItem="Ksc-eu-KvE" secondAttribute="bottom" constant="200" id="o6Q-1Z-Jv7"/>
+                            <constraint firstItem="Ksc-eu-KvE" firstAttribute="top" secondItem="O9f-ky-bZb" secondAttribute="top" constant="100" id="poi-4W-d01"/>
+                            <constraint firstItem="Ksc-eu-KvE" firstAttribute="trailing" secondItem="O9f-ky-bZb" secondAttribute="trailing" id="zF3-Fw-mpN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O9f-ky-bZb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfs-fv-DpN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1046.376811594203" y="128.57142857142856"/>
+        </scene>
+        <!--Selection Watch View Controller-->
+        <scene sceneID="2Cx-qk-d72">
+            <objects>
+                <viewController id="H7v-qB-9Ye" customClass="SelectionWatchViewController" customModule="AR_Watch_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lIV-rY-UPK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnB-zd-Xkr">
+                                <rect key="frame" x="0.0" y="144" width="414" height="518"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nnB-zd-Xkr" firstAttribute="top" secondItem="ZQI-K9-g17" secondAttribute="top" constant="100" id="Tvl-vw-TdI"/>
+                            <constraint firstItem="nnB-zd-Xkr" firstAttribute="trailing" secondItem="ZQI-K9-g17" secondAttribute="trailing" id="ZxD-cI-Cmd"/>
+                            <constraint firstItem="nnB-zd-Xkr" firstAttribute="leading" secondItem="ZQI-K9-g17" secondAttribute="leading" id="pSb-pJ-YKY"/>
+                            <constraint firstItem="ZQI-K9-g17" firstAttribute="bottom" secondItem="nnB-zd-Xkr" secondAttribute="bottom" constant="200" id="tDY-HR-Yra"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZQI-K9-g17"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="nnB-zd-Xkr" id="Ma5-wk-pE9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rk8-TO-711" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123.18840579710145" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+</document>

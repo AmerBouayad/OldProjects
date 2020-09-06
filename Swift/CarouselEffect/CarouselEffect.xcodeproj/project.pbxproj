@@ -1,0 +1,373 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18D642272416935D00FA6015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642262416935D00FA6015 /* AppDelegate.swift */; };
+		18D642292416935D00FA6015 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642282416935D00FA6015 /* SceneDelegate.swift */; };
+		18D6422B2416935D00FA6015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6422A2416935D00FA6015 /* ViewController.swift */; };
+		18D6422E2416935D00FA6015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D6422C2416935D00FA6015 /* Main.storyboard */; };
+		18D642302416935E00FA6015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D6422F2416935E00FA6015 /* Assets.xcassets */; };
+		18D642332416935E00FA6015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D642312416935E00FA6015 /* LaunchScreen.storyboard */; };
+		18D6423D24169E7400FA6015 /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6423C24169E7400FA6015 /* Watch.swift */; };
+		18D642402416A00E00FA6015 /* WatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6423F2416A00E00FA6015 /* WatchCollectionViewCell.swift */; };
+		18D642442418E3A000FA6015 /* ArViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642432418E3A000FA6015 /* ArViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18D642232416935D00FA6015 /* CarouselEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarouselEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D642262416935D00FA6015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18D642282416935D00FA6015 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		18D6422A2416935D00FA6015 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18D6422D2416935D00FA6015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18D6422F2416935E00FA6015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18D642322416935E00FA6015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18D642342416935E00FA6015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D6423C24169E7400FA6015 /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
+		18D6423F2416A00E00FA6015 /* WatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		18D642432418E3A000FA6015 /* ArViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18D642202416935D00FA6015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18D6421A2416935D00FA6015 = {
+			isa = PBXGroup;
+			children = (
+				18D642252416935D00FA6015 /* CarouselEffect */,
+				18D642242416935D00FA6015 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18D642242416935D00FA6015 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18D642232416935D00FA6015 /* CarouselEffect.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18D642252416935D00FA6015 /* CarouselEffect */ = {
+			isa = PBXGroup;
+			children = (
+				18D6423E24169FC800FA6015 /* View */,
+				18D6423B24169E5200FA6015 /* Model */,
+				18D642262416935D00FA6015 /* AppDelegate.swift */,
+				18D642282416935D00FA6015 /* SceneDelegate.swift */,
+				18D6422A2416935D00FA6015 /* ViewController.swift */,
+				18D6422C2416935D00FA6015 /* Main.storyboard */,
+				18D6422F2416935E00FA6015 /* Assets.xcassets */,
+				18D642312416935E00FA6015 /* LaunchScreen.storyboard */,
+				18D642342416935E00FA6015 /* Info.plist */,
+				18D642432418E3A000FA6015 /* ArViewController.swift */,
+			);
+			path = CarouselEffect;
+			sourceTree = "<group>";
+		};
+		18D6423B24169E5200FA6015 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18D6423C24169E7400FA6015 /* Watch.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18D6423E24169FC800FA6015 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18D6423F2416A00E00FA6015 /* WatchCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18D642222416935D00FA6015 /* CarouselEffect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18D642372416935E00FA6015 /* Build configuration list for PBXNativeTarget "CarouselEffect" */;
+			buildPhases = (
+				18D6421F2416935D00FA6015 /* Sources */,
+				18D642202416935D00FA6015 /* Frameworks */,
+				18D642212416935D00FA6015 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarouselEffect;
+			productName = CarouselEffect;
+			productReference = 18D642232416935D00FA6015 /* CarouselEffect.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18D6421B2416935D00FA6015 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = abo;
+				TargetAttributes = {
+					18D642222416935D00FA6015 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 18D6421E2416935D00FA6015 /* Build configuration list for PBXProject "CarouselEffect" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18D6421A2416935D00FA6015;
+			productRefGroup = 18D642242416935D00FA6015 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18D642222416935D00FA6015 /* CarouselEffect */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18D642212416935D00FA6015 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D642332416935E00FA6015 /* LaunchScreen.storyboard in Resources */,
+				18D642302416935E00FA6015 /* Assets.xcassets in Resources */,
+				18D6422E2416935D00FA6015 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18D6421F2416935D00FA6015 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D6422B2416935D00FA6015 /* ViewController.swift in Sources */,
+				18D6423D24169E7400FA6015 /* Watch.swift in Sources */,
+				18D642272416935D00FA6015 /* AppDelegate.swift in Sources */,
+				18D642402416A00E00FA6015 /* WatchCollectionViewCell.swift in Sources */,
+				18D642292416935D00FA6015 /* SceneDelegate.swift in Sources */,
+				18D642442418E3A000FA6015 /* ArViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18D6422C2416935D00FA6015 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18D6422D2416935D00FA6015 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18D642312416935E00FA6015 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18D642322416935E00FA6015 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18D642352416935E00FA6015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		18D642362416935E00FA6015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18D642382416935E00FA6015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59R5HDZCAD;
+				INFOPLIST_FILE = CarouselEffect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tapptic.brussels.abou.CarouselEffect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18D642392416935E00FA6015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59R5HDZCAD;
+				INFOPLIST_FILE = CarouselEffect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tapptic.brussels.abou.CarouselEffect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18D6421E2416935D00FA6015 /* Build configuration list for PBXProject "CarouselEffect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D642352416935E00FA6015 /* Debug */,
+				18D642362416935E00FA6015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18D642372416935E00FA6015 /* Build configuration list for PBXNativeTarget "CarouselEffect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D642382416935E00FA6015 /* Debug */,
+				18D642392416935E00FA6015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18D6421B2416935D00FA6015 /* Project object */;
+}
