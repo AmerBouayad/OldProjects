@@ -1,0 +1,20 @@
+Résultat de la compilation: 
+code6.cpp: In member function ‘A A::operator+(int)’:
+code6.cpp:9:5: warning: no return statement in function returning non-void [-Wreturn-type]
+     }
+     ^
+code6.cpp:6:21: warning: unused parameter ‘i’ [-Wunused-parameter]
+     A operator+(int i)
+                     ^
+code6.cpp: In member function ‘A A::operator+(A)’:
+code6.cpp:13:5: warning: no return statement in function returning non-void [-Wreturn-type]
+     }
+     ^
+code6.cpp:10:19: warning: unused parameter ‘a’ [-Wunused-parameter]
+     A operator+(A a)
+                   ^
+code6.cpp: In function ‘int main()’:
+code6.cpp:18:8: error: no match for ‘operator+’ (operand types are ‘int’ and ‘A’)
+     i1 + a1 + a2;
+     ~~~^~~~
+(ERREUR: la compilation a échouée!)

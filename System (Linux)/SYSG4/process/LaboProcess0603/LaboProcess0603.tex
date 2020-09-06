@@ -1,0 +1,30 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 06-02 - shell et zombies }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Modifier le shell simple pour y ajouter la notion de background. 
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0603/SOURCES/ShellBackZ.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Chaque fils lancé en background donne lieu à un zombie.
+\end{itemize}
+
+\subsection{En roue libre}
+Proposez une solution pour éliminer les zombies, elle se basera sur la réception du signal SIGCHLD. Testez cette solution. Comment se prémunir en cas de perte d'un signal ?
+\newpage

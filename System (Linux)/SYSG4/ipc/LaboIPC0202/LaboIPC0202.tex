@@ -1,0 +1,38 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ IPC - LaboIPC 02-02 - synchronisation pour Affichage continu }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& MDV2007 Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrire un programme AffContinu.c qui affiche de façon permanente un caractère saisi au clavier. L'affichage ne peut commencer qu'après avoir saisi un premier caractère. Exemple, si on saisi 'a' suivi de enter, des 'a' s'affichent de façon continue à l'écran...etc. Le programme s'arrête si on frappe 'q' suivi de enter. L'ordre de lancement est quelconque.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboIPC0202/SOURCES/AffContinu.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item La lecture est bloquante, l'affichage est continu. Il faut donc deux process.
+\item Il faut communiquer le caractère lu à l'autre process. Nous utilisons une mémoire partagée à ce fin
+\item Le sémaphore est utilisé pour empêcher le process qui affiche de commencer avant celui qui lit.
+\item Au clavier, il faut lire au minimum 2 caractères (celui souhaité + enter). Seul le premier est affiché. 
+\item Il est utile de vérifier que tous ses process sont terminés à l'aide de ps.
+\end{itemize}
+
+\subsection{En roue libre}
+\begin{itemize}
+\item Modifiez la logique de synchronisation de départ pour que l'on puisse utiliser un processus afficheur indépendant (compilé séparément). 
+\item Comment l'adapter si le nombre d'afficheurs n'est pas connu ?
+\end{itemize}
+\newpage
+

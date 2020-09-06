@@ -1,0 +1,25 @@
+Résultat de la compilation: 
+code7.cpp:5:5: error: ‘Ti’ does not name a type; did you mean ‘T’?
+     Ti & t; int & i;
+     ^~
+     T
+code7.cpp: In member function ‘void Brol<T>::print()’:
+code7.cpp:16:22: error: ‘t’ was not declared in this scope
+         std::cout << t << " " << i << std::endl;
+                      ^
+code7.cpp: In instantiation of ‘class Brol<int>’:
+code7.cpp:21:15:   required from here
+code7.cpp:10:5: error: ‘Brol<T>::Brol(int&) [with T = int]’ cannot be overloaded
+     Brol(int & i)
+     ^~~~
+code7.cpp:6:5: error: with ‘Brol<T>::Brol(T&) [with T = int]’
+     Brol(T & t)
+     ^~~~
+code7.cpp: In function ‘int main()’:
+code7.cpp:21:17: error: cannot bind non-const lvalue reference of type ‘int&’ to an rvalue of type ‘int’
+     Brol<int>b(2);
+                 ^
+code7.cpp:6:5: note:   initializing argument 1 of ‘Brol<T>::Brol(T&) [with T = int]’
+     Brol(T & t)
+     ^~~~
+(ERREUR: la compilation a échouée!)

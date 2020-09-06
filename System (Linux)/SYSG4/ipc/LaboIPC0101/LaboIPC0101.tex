@@ -1,0 +1,38 @@
+
+\renewcommand{\titre}{\textcolor{blue}{IPC - LaboIPC 01-01 - permanence et suppression}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& MDV2007 Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrire un programme FreeShm.c qui efface toute les mémoires partagées qui existent sur le système après avoir affiché les informations concernant ces mémoires.
+Afin de tester ce programme, écrire un programme AlloueShm.c qui réserve et initialise de la mémoire partagée. Ajouter le programme AttacheShm.c qui consulte les zones de mémoire allouées.
+
+\subsection{Une solution}
+
+\lstinputlisting[language=c]{LaboIPC0101/SOURCES/FreeShm.c}
+\lstinputlisting[language=c]{LaboIPC0101/SOURCES/AlloueShm.c}
+\lstinputlisting[language=c]{LaboIPC0101/SOURCES/AttachShm.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Les zones de mémoire allouées sont permanentes. Un même identifiant indique qu'il s'agit de la même zone.
+\item On ne peut libérer que les mémoires partagées dont on est propriétaire, sauf le root qui a tous les droits.
+\end{itemize}
+
+\subsection{En roue libre}
+\begin{itemize}
+\item Montrez que l'adresse d'attachement de la mémoire partagée à l'espace d'adressage du programme est un multiple de la taille d'une page.
+\item Un processus peut-il continuer à modifier la sone de mémoire partagée après sa "suppression" par le programme FreeShm ? Quel comportement vérifie-t-on lors de nouveaux appels à shmget et shmat pour la même clé après marquage pour suppression ?
+\item Comment adapter AlloueShm.c et AttachShm.c en imposant l'utilisation de IPC\_PRIVATE ?
+\end{itemize}
+\newpage

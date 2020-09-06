@@ -1,0 +1,5 @@
+Résultat de la compilation: 
+code11.cpp:5:5: error: ‘B’ does not name a type
+     B b;
+     ^
+(ERREUR: la compilation a échouée!)

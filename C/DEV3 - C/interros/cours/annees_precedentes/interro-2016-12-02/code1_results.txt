@@ -1,0 +1,9 @@
+Résultat de la compilation: 
+(la compilation a réussie)
+Résultat de l'exécution: 
+Boom
+Boom
+Boom
+Boom
+I␣want␣you␣in␣my␣room
+(outdated␣song)

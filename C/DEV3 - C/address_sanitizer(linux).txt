@@ -1,0 +1,6 @@
+QMAKE_CXXFLAGS+="-fsanitize=address -fno-omit-frame-pointer" \
+QMAKE_CFLAGS+="-fsanitize=address -fno-omit-frame-pointer" \
+QMAKE_LFLAGS+="-fsanitize=address"
+
+
+(detects memory leaks, buffer overflow and uninitialized reads in mem ?)

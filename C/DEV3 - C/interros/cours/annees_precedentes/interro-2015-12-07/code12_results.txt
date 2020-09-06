@@ -1,0 +1,36 @@
+Résultat de la compilation: 
+code12.cpp: In constructor ‘A::A(int)’:
+code12.cpp:7:1: warning: uninitialized const member in ‘const int’ [-fpermissive]
+ A( int entier ) { entier = i ;}
+ ^
+code12.cpp:6:11: note: ‘const int A::i’ should be initialized
+ const int i ;
+           ^
+code12.cpp:7:8: warning: parameter ‘entier’ set but not used [-Wunused-but-set-parameter]
+ A( int entier ) { entier = i ;}
+        ^~~~~~
+(la compilation a réussie)
+Résultat de l'exécution: 
+==18510== Conditional jump or move depends on uninitialised value(s)
+==18510==    at 0x4F3BD6B: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x4F475E4: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x1088D3: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2015-12-07/code12)
+==18510== 
+==18510== Use of uninitialised value of size 8
+==18510==    at 0x4F3ABC3: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x4F3BD94: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x4F475E4: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x1088D3: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2015-12-07/code12)
+==18510== 
+==18510== Conditional jump or move depends on uninitialised value(s)
+==18510==    at 0x4F3ABCF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x4F3BD94: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x4F475E4: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x1088D3: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2015-12-07/code12)
+==18510== 
+==18510== Conditional jump or move depends on uninitialised value(s)
+==18510==    at 0x4F3BDC7: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x4F475E4: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==18510==    by 0x1088D3: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2015-12-07/code12)
+==18510== 
+0

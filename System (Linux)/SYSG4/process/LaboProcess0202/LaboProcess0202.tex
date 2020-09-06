@@ -1,0 +1,33 @@
+\lstset{language={}}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 02-02 - zombies }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 02/2016 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrivez un programme qui crée un zombie, affiche ensuite cet état zombie à l'aide de la fonction system, élimine ce zombie et affiche les process en cours (sans zombie).
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0202/SOURCES/Zombie.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item sprintf est la façon propre de transformer un nombre en chaîne de caractère. Écrivez un printf normal, ensuite ajoutez la chaîne destination pré allouée comme premier argument de sprintf.
+\item La fonction c system crée un shell et exécute la chaîne comme seule commande de ce shell.
+\item l'élimination du zombie est provoquée par l'appel système wait. Un kill n'a pas d'effet sur un Zombie, on ne tue pas un fantôme !
+\end{itemize}
+
+\subsection{En roue libre}
+Adaptez ce code pour éliminer le zombie grâce à la technique du double fork qui permet de forcer l'adoption immédiate par le process 1\\
+Vérifiez qu'il n'y a pas de création de zombies dans ce cas.
+\newpage

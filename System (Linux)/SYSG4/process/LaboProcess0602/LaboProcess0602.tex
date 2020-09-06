@@ -1,0 +1,34 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 06-02 - trap de tous les signaux }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+Écrivez un programme qui traite tous les signaux non temps réel. 
+Observez le comportement de ce programme en lui envoyant plusieurs signaux et CTRL-C.\\ 
+\\
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0602/SOURCES/Allsig.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Les signaux SIGKILL et SIGSTP ne peuvent être traités.
+\item L'utilisation de l'appel système pause permet d'éviter l'attente active.
+\end{itemize}
+
+\subsection{En roue libre}
+\begin{itemize}
+\item Modifiez Le comportement du programme de manière à ce qu'un signal traité une fois soit ensuite ignoré en utilisant SIG\_IGN.
+\end{itemize}
+\newpage

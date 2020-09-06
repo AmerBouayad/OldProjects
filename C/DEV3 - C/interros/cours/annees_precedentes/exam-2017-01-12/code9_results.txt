@@ -1,0 +1,21 @@
+Résultat de la compilation: 
+code9.cpp: In function ‘int main()’:
+code9.cpp:22:31: warning: ISO C++ says that these are ambiguous, even though the worst conversion for the first is better than the worst conversion for the second:
+     A a(2); std::cout << (a + 5) << std::endl;
+                               ^
+code9.cpp:7:12: note: candidate 1: double A::operator+(double)
+     double operator+(double d)
+            ^~~~~~~~
+code9.cpp:22:31: note: candidate 2: operator+(double, int) <built-in>
+     A a(2); std::cout << (a + 5) << std::endl;
+                               ^
+code9.cpp:22:31: warning: ISO C++ says that these are ambiguous, even though the worst conversion for the first is better than the worst conversion for the second:
+code9.cpp:7:12: note: candidate 1: double A::operator+(double)
+     double operator+(double d)
+            ^~~~~~~~
+code9.cpp:22:31: note: candidate 2: operator+(int, int) <built-in>
+     A a(2); std::cout << (a + 5) << std::endl;
+                               ^
+(la compilation a réussie)
+Résultat de l'exécution: 
+7

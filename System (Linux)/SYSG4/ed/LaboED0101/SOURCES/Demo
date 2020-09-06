@@ -1,0 +1,51 @@
+#!/bin/bash
+#NOM    : Demo
+#CLASSE : ED - LaboED 04-01
+#OBJET  : réservé au makefile
+#AUTEUR	: J.C. Jaumain, 07/2011
+clear
+C='\033[44m'
+E='\033[32m\033[1m'
+W='\033[31m\033[1m'
+N='\033[0m'
+clear
+echo "Démonstration du partitionnement du disk"
+echo "----------------------------------------"
+echo
+if [ -f mbr ]
+then
+	echo -n "Le fichier mbr existe. Je prend ce fichier comme disque à étudier ? [o/n] "
+	read rep
+else
+	rep="n"
+fi
+
+if [ $rep == "n" ]
+then
+	if [ $(id -u) -ne 0 ] # si pas administrateur
+	then 
+		echo "Vous devez être administrateur pour lire depuis un périphérique"
+		echo
+		echo -e "${C}             --> Enter pour continuer${N}"
+		read
+		exit 0
+	else
+		echo -n "Donnez le nom du pilote du disque MBR que vous voulez lire : "
+		read NomDisk
+		dd if=$NomDisk of=mbr bs=512 count=1 # copie du mbr du disque. A la 
+			# prochaine exécution il ne faudra plus être root.
+		echo "Le fichier mbr existe maintenant"
+		./LectMBR mbr
+		echo
+		echo -e "${C}             --> Enter pour continuer${N}"
+		read
+		echo "Résultat de fdisk -l $NomDisk"
+		fdisk -l $NomDisk
+	fi
+else
+	./LectMBR mbr
+fi
+echo
+echo -e "${C}             --> Enter pour continuer${N}"
+read
+

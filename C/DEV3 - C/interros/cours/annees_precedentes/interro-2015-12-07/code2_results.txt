@@ -1,0 +1,17 @@
+Résultat de la compilation: 
+code2.cpp: In function ‘int main()’:
+code2.cpp:23:9: error: no matching function for call to ‘B::f(int&)’
+ b. f (n );
+         ^
+code2.cpp:14:6: note: candidate: void B::f(int, int)
+ void f ( int n , int m) { cout << "B: : entiers ␣" << n << "␣" << m << endl ; }
+      ^
+code2.cpp:14:6: note:   candidate expects 2 arguments, 1 provided
+code2.cpp:24:9: error: no matching function for call to ‘B::f(char&)’
+ b. f (c );
+         ^
+code2.cpp:14:6: note: candidate: void B::f(int, int)
+ void f ( int n , int m) { cout << "B: : entiers ␣" << n << "␣" << m << endl ; }
+      ^
+code2.cpp:14:6: note:   candidate expects 2 arguments, 1 provided
+(ERREUR: la compilation a échouée!)

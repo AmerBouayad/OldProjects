@@ -1,0 +1,37 @@
+Résultat de la compilation: 
+code5.cpp: In function ‘void f(B)’:
+code5.cpp:17:10: warning: unused parameter ‘b’ [-Wunused-parameter]
+ void f(B b)
+          ^
+(la compilation a réussie)
+Résultat de l'exécution: 
+You␣have␣no␣respect␣for␣logic
+Get␣to␣the␣choppaaa
+Get␣to␣the␣choppaaa
+Get␣to␣the␣choppaaa
+==19071== Invalid free() / delete / delete[] / realloc()
+==19071==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==19071==    by 0x108C01: B::~B() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==    by 0x108B09: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==  Address 0x5ae1c80 is 0 bytes inside a block of size 1 free'd
+==19071==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==19071==    by 0x108C01: B::~B() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==    by 0x108AC5: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==  Block was alloc'd at
+==19071==    at 0x4C2D25F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==19071==    by 0x108BD3: B::B() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==    by 0x108AA5: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071== 
+==19071== Invalid free() / delete / delete[] / realloc()
+==19071==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==19071==    by 0x108C01: B::~B() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==    by 0x108B15: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==  Address 0x5ae1c80 is 0 bytes inside a block of size 1 free'd
+==19071==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==19071==    by 0x108C01: B::~B() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==    by 0x108AC5: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==  Block was alloc'd at
+==19071==    at 0x4C2D25F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==19071==    by 0x108BD3: B::B() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071==    by 0x108AA5: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2017-12-06/code5)
+==19071== 

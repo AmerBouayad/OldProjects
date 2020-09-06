@@ -1,0 +1,31 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 06-01 - trap du ctrl-c }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrivez un programme qui affiche "aie 1 fois", "aie 2 fois",... "aie n fois", "j'ai compris" lorsqu'on pousse sur ctrl-c. Le nombre n est donné comme premier argument (de 0 à n) et vaut 0 par défaut.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0601/SOURCES/Sigaction.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Pour obtenir de l'aide sur l'utilisation de l'appel système signal : man 2 sigaction
+\item Pour obtenir la liste des signaux : man 7 signal
+\item Remarquer la boucle infinie dans le programme principal pour laisser à l'utilisateur le temps d'entrer Ctrl-c.
+\end{itemize}
+\subsection{En roue libre}
+Le traitement du signal sera fait une seule fois. On se passera de compteur. 
+\newpage

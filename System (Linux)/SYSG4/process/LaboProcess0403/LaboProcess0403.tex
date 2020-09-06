@@ -1,0 +1,32 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 04-03 - shell et redirections }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Modifier le shell simple pour y ajouter la notion de redirection >.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0403/SOURCES/ShellRedir.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item open doit être appelé pour créer le fichier 'fichier'. Il ne faut pas oublier d'ajouter les droits sinon l'appel système prend le contenu de EDX pour les donner ce qui donne n'importe quoi !
+\item 0644, le 0 devant signifie 'en octal'.
+\end{itemize}
+
+\subsection{En roue libre}
+Adaptez cette solution pour la redirection de l'entrée standard "<
+
+\newpage

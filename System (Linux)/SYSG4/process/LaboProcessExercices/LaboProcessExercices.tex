@@ -1,0 +1,83 @@
+\lhead{ Labo Process - Exercices }
+
+\begin{list}{+}{}
+
+
+\item Process002: 
+Déterminer les valeurs de glob et loc affichées par ce programme. Justifiez votre réponse.
+\begin{lstlisting}[frame=trBL]{}
+int glob=45;
+int main()
+{ int loc=78; printf("< %d %d\n",glob,loc);
+   if (fork()= =0) { glob=65; loc=32; exit(0);}
+   wait(0);
+   printf("> %d %d\n",glob,loc);
+   exit(0);
+}
+\end{lstlisting}
+
+\item Process004: 
+fork( ) dédouble-t'il la mémoire pointée par un pointeur ou uniquement le pointeur ? Imaginez un exemple qui prouve votre réponse. La valeur du pointeur est-elle la même chez le fils et le père ? Justifiez votre réponse.
+
+\item Process019: 
+Écrivez un shell simplifié seulement capable d'exécuter toujours la commande
+\fbox{ls -ail >x  2>x} ou \fbox{exit}. Peu importe ce que vous écrirez comme commandes au clavier. 
+
+\item Process025: 
+On vous donne un shell simple. Modifiez-le afin d'y ajouter l'interprétation du caractère * (isolé). 
+
+\item Process027: 
+On vous donne un shell simple en annexe. Comment réagit ce shell si vous tapez une commande qui n'existe pas ? Expliquez ce comportement et apportez une solution.
+
+\item Process036: 
+Vous trouvez un programme suid root rwsr-xr-x qui contient la ligne \\
+\fbox{execlp("ps","ps","aux",0)}\\
+Décrivez comment vous pouvez devenir administrateur du système sans en connaître le passwd.
+Effectuez une démonstration de cette description.
+
+\item Process045: 
+Écrivez un programme qui gère les zombies. A chaque boucle, ce programme lit un message au clavier. Si ce message vaut
+\begin{itemize} 
+\item c  : le programme crée 2 nouveaux zombies et affiche la liste des zombies 'actuels' via la commande ps.
+\item d nnnnn : le programme élimine le zombie de pid nnnnn et affiche la liste des zombies 'actuels' via la commande ps.
+\item q : le programme s'arrête.
+\end{itemize} 
+Que deviennent les éventuels zombies restants quand vous quittez ce programme ? 
+
+\item Process049: 
+Écrivez un programme qui simule un shell seulement capable d'exécuter toujours la commande
+\fbox{cd;ls>>out} ou \fbox{exit}. Peu importe ce que vous écrirez comme commandes au clavier.
+
+\item Process053:
+Écrivez shell simplifié seulement capable d'exécuter toujours la commande
+\fbox{cd; (cd ..;ls); ls} ou \fbox{exit}. Peu importe ce que vous écrirez comme commandes au clavier. Veillez à programmer le ; et les parenthèses.
+ 
+\item Process055:
+Écrivez un shell simplifié seulement capable d'exécuter toujours la commande
+\fbox{mkdir brol \&\& (cd brol;>f)} ou \fbox{exit}. Peu importe ce que vous écrirez comme commandes au clavier. Veillez à programmer le ; et les parenthèses.
+ 
+\item Process2\_004: 
+Écrivez un shell simplifié seulement capable d'exécuter toujours la commande
+\fbox{ls -ail | cat > x} ou \fbox{exit}. Peu importe ce que vous écrirez comme commandes au clavier.
+
+\item Process2\_009: 
+Réécrivez la commande sleep en c et baptisez-le Msleep. Elle utilisera les signaux (SIGALRM) et les appels alarm(n) qui envoie le signal SIGALRM après n secondes et pause() qui bloque le processus jusqu'à l'arrivée d'un signal.
+
+\item Process2\_012: 
+Écrire un programme c qui permet d'afficher de façon continue le dernier caractère introduit au clavier. (l'appel read() est bloquant!). Songez à communiquer avec un processus fils via un pipe et un signal.
+
+\item Process2\_025 :
+Testez le comportement d'un programme qui intercepte les signaux et affiche un message en clair. Par exemple : signal SIGSEGV reçu du au fait que le programme tente d'accéder à des données d'un pointeur non initialisé. Faites de même avec au moins 3 signaux différents.
+
+\item Process2\_027 :
+Écrivez un process qui envoie une série de signaux à un autre process. Ces signaux sont différents et envoyés rapidement, dans un ordre quelconque. Montrez que le process qui reçoit les signaux ne les reçoit pas nécessairement dans le même ordre. Expliquez.
+
+\item Process2\_039 :
+Écrivez un programme qui affiche 10 fois "bonjour n" où n va de 0 à 9, à distance de 3 secondes. Votre programme n'utilisera pas l'appel système sleep. 
+
+\item Process2\_054(*) :
+Écrivez un shell simplifié seulement capable d'exécuter toujours les commandes
+\fbox{ls f 2>err | cat; cat err} ou \fbox{exit}. Peu importe ce que vous écrirez comme commandes au clavier.
+
+\end{list}
+

@@ -1,0 +1,12 @@
+Résultat de la compilation: 
+code10.cpp: In function ‘int f(const char*)’:
+code10.cpp:4:22: warning: ‘sizeof’ on array function parameter ‘tab’ will return size of ‘const char*’ [-Wsizeof-array-argument]
+     return sizeof(tab) / sizeof(*tab);
+                      ^
+code10.cpp:2:22: note: declared here
+ int f(const char tab[])
+                      ^
+(la compilation a réussie)
+Résultat de l'exécution: 
+7
+8

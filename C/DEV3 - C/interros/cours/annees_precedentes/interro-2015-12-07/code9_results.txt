@@ -1,0 +1,7 @@
+Résultat de la compilation: 
+(la compilation a réussie)
+Résultat de l'exécution: 
+Je␣suis␣en␣8␣,␣6␣et␣ma␣couleur␣est␣2
+Je␣suis␣en␣8␣,␣6␣et␣ma␣couleur␣est␣2
+Je␣suis␣en␣3␣,␣5
+Je␣suis␣en␣3␣,␣5

@@ -1,0 +1,159 @@
+Résultat de la compilation: 
+code8.cpp: In function ‘int main()’:
+code8.cpp:13:34: error: could not convert ‘{5, 4, 3, 2, 1}’ from ‘<brace-enclosed initializer list>’ to ‘std::vector<A>’
+     vector <A> v = {5, 4, 3, 2, 1};
+                                  ^
+In file included from /usr/include/c++/7/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/predefined_ops.h: In instantiation of ‘constexpr bool __gnu_cxx::__ops::_Iter_less_iter::operator()(_Iterator1, _Iterator2) const [with _Iterator1 = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Iterator2 = __gnu_cxx::__normal_iterator<A*, std::vector<A> >]’:
+/usr/include/c++/7/bits/stl_algo.h:81:17:   required from ‘void std::__move_median_to_first(_Iterator, _Iterator, _Iterator, _Iterator, _Compare) [with _Iterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1921:34:   required from ‘_RandomAccessIterator std::__unguarded_partition_pivot(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1953:38:   required from ‘void std::__introsort_loop(_RandomAccessIterator, _RandomAccessIterator, _Size, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Size = long int; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1968:25:   required from ‘void std::__sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:4836:18:   required from ‘void std::sort(_RAIter, _RAIter) [with _RAIter = __gnu_cxx::__normal_iterator<A*, std::vector<A> >]’
+code8.cpp:14:28:   required from here
+/usr/include/c++/7/bits/predefined_ops.h:43:23: error: no match for ‘operator<’ (operand types are ‘A’ and ‘A’)
+       { return *__it1 < *__it2; }
+                ~~~~~~~^~~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:888:5: note: candidate: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:888:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/7/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/predefined_ops.h:43:23: note:   ‘A’ is not derived from ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’
+       { return *__it1 < *__it2; }
+                ~~~~~~~^~~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:895:5: note: candidate: template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:895:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/7/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/predefined_ops.h:43:23: note:   ‘A’ is not derived from ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’
+       { return *__it1 < *__it2; }
+                ~~~~~~~^~~~~~~~
+/usr/include/c++/7/bits/predefined_ops.h: In instantiation of ‘bool __gnu_cxx::__ops::_Val_less_iter::operator()(_Value&, _Iterator) const [with _Value = A; _Iterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >]’:
+/usr/include/c++/7/bits/stl_algo.h:1828:20:   required from ‘void std::__unguarded_linear_insert(_RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Val_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1855:36:   required from ‘void std::__insertion_sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1885:25:   required from ‘void std::__final_insertion_sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1971:31:   required from ‘void std::__sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:4836:18:   required from ‘void std::sort(_RAIter, _RAIter) [with _RAIter = __gnu_cxx::__normal_iterator<A*, std::vector<A> >]’
+code8.cpp:14:28:   required from here
+/usr/include/c++/7/bits/predefined_ops.h:90:22: error: no match for ‘operator<’ (operand types are ‘A’ and ‘A’)
+       { return __val < *__it; }
+                ~~~~~~^~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:888:5: note: candidate: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:888:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/7/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/predefined_ops.h:90:22: note:   ‘A’ is not derived from ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’
+       { return __val < *__it; }
+                ~~~~~~^~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:895:5: note: candidate: template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:895:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/7/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/predefined_ops.h:90:22: note:   ‘A’ is not derived from ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’
+       { return __val < *__it; }
+                ~~~~~~^~~~~~~
+/usr/include/c++/7/bits/predefined_ops.h: In instantiation of ‘bool __gnu_cxx::__ops::_Iter_less_val::operator()(_Iterator, _Value&) const [with _Iterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Value = A]’:
+/usr/include/c++/7/bits/stl_heap.h:133:48:   required from ‘void std::__push_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare&) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Distance = long int; _Tp = A; _Compare = __gnu_cxx::__ops::_Iter_less_val]’
+/usr/include/c++/7/bits/stl_heap.h:237:23:   required from ‘void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Distance = long int; _Tp = A; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_heap.h:342:22:   required from ‘void std::__make_heap(_RandomAccessIterator, _RandomAccessIterator, _Compare&) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1672:23:   required from ‘void std::__heap_select(_RandomAccessIterator, _RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1933:25:   required from ‘void std::__partial_sort(_RandomAccessIterator, _RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1948:27:   required from ‘void std::__introsort_loop(_RandomAccessIterator, _RandomAccessIterator, _Size, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Size = long int; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:1968:25:   required from ‘void std::__sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<A*, std::vector<A> >; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’
+/usr/include/c++/7/bits/stl_algo.h:4836:18:   required from ‘void std::sort(_RAIter, _RAIter) [with _RAIter = __gnu_cxx::__normal_iterator<A*, std::vector<A> >]’
+code8.cpp:14:28:   required from here
+/usr/include/c++/7/bits/predefined_ops.h:65:22: error: no match for ‘operator<’ (operand types are ‘A’ and ‘A’)
+       { return *__it < __val; }
+                ~~~~~~^~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:888:5: note: candidate: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:888:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/7/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/predefined_ops.h:65:22: note:   ‘A’ is not derived from ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’
+       { return *__it < __val; }
+                ~~~~~~^~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:895:5: note: candidate: template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:895:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/7/bits/stl_algobase.h:71:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code8.cpp:1:
+/usr/include/c++/7/bits/predefined_ops.h:65:22: note:   ‘A’ is not derived from ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’
+       { return *__it < __val; }
+                ~~~~~~^~~~~~~
+(ERREUR: la compilation a échouée!)

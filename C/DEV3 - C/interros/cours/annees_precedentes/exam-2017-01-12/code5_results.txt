@@ -1,0 +1,8 @@
+Résultat de la compilation: 
+code5.cpp: In function ‘int main()’:
+code5.cpp:8:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i = 0; i < l.size(); i++)
+                     ~~^~~~~~~~~~
+(la compilation a réussie)
+Résultat de l'exécution: 
+30 20 12 6 

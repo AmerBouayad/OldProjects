@@ -1,0 +1,46 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ IPC - LaboIPC 02-01 - section critique }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& MDV2007 Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Deux process, père et fils, affichent à l'écran ce qui est saisi au clavier. Il faut synchroniser les process de telle façon que l'utilisateur sait à quel process il s'adresse et que l'affichage précise quel process affiche. Ce programme utilise un argument qui vaut soit s (les process sont synchronisés), soit ns (les process ne sont pas synchronisés). Prendre s par défaut.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboIPC0201/SOURCES/Critique.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Dans le cas d'un père et une fils l'identifiant est transmis  au moment du fork. Nous choisissons d'utiliser IPC\_PRIVATE.
+\item La ressource est mise à 1 au début pour écrire la section critique (lecture + affichage) de chaque processus
+\item La section critique doit être la plus petite possible sinon ce n'est pas la peine d'avoir la multiprogrammation.
+\item Le père utilise l'appel système wait() avant la suppression du sémaphore par IPC\_RMID(). Est-ce indispensable ?
+\item Les variables n et buff sont des instances différentes chez le père et chez le fils.
+\end{itemize}
+
+\subsection{En roue libre}
+Vérifiez si un sémaphore est supprimé après la mort des process qui l'utilisent. \\
+\bigskip
+En vous inspirant de l'exemple donné, créez un module source c (une librairie) avec les outils suivants :\\
+\begin{itemize}
+\item int creeSem (); // sans paramètres, crée un nouveau sémaphore unique et en retourne l'id
+\item void initsem (int sem, int val); // initialise le compteur de ressources à val 
+\item void supsem (int sem); // supprime le sémaphore
+\item void down (int sem);   // obtient une ressource
+\item void up (int sem);     // restitue une ressource
+\item void zero (int sem);   // attend que le compteur vaille 0
+\end{itemize}
+\bigskip
+testez vos fonctions dans l'exercice précédent.
+\newpage

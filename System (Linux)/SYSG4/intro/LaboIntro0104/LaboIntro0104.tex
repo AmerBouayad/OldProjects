@@ -1,0 +1,62 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Intro - LaboIntro 01-04 - Fonctionnement d'un shell, premiers pas}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap \\\hline
+Date :		& 08/2016 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Nous allons nous servir de la commande \texttt{echo} pour comprendre comment le shell traite une ligne de commande et les wildcards.
+
+\texttt{echo} est une commande qui affiche sur la sortie standard ce qu'elle a reçu en paramètre.
+Observez le comportement de la commande \texttt{echo} dans les cas suivants : \texttt{echo coucou ; echo une phrase complète > fichier ; echo coucou >{}> fichier ; echo * ; echo coucou | wc -c} 
+
+Dans le sous-répertoire SOURCES, Écrivez un code source en c et baptisez le Mecho.c. Il affichera sur la sortie standard ce qu'il a reçu en paramètre.
+
+Cette commande se comporte-t-elle comme la commande \texttt{echo} dans les cas cités précédemment ?
+
+
+\subsection{Une solution}
+
+Pour résoudre cet exercice il faut écrire le code source Mecho.c, le script Demo qui exécute les différents tests demandés et le Makefile qui génère l'exécutable et lance la démonstration. Ce dernier aura également une règle \emph{clean} appropriée.
+
+Ainsi \texttt { cd SOURCES ; make} montre l'exercice résolu. 
+
+Les fichiers suivants se trouvent dans le répertoire SOURCES :
+
+\lstinputlisting{LaboIntro0104/SOURCES/Mecho.c}
+\lstinputlisting{LaboIntro0104/SOURCES/Demo}
+\lstinputlisting{LaboIntro0104/SOURCES/Makefile}
+
+\subsection{En roue libre : complétons Demo}
+\begin{itemize}
+\item est-ce que, pour les cas suivants, le programme Mecho se comportera comme \texttt{echo} ?
+\begin{itemize}
+\item \texttt{echo une phrase complète > fichier}
+\item \texttt{echo coucou >{}> fichier}
+\item \texttt{echo coucou | wc -c}
+\item \texttt{echo *}
+\end{itemize}
+\item complétez votre script Demo pour vérifier ces derniers cas
+\end{itemize}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item argv[0] n'est pas affiché. En effet, en C, le premier argument est toujours le nom du programme, dans ce cas Mecho.
+\item Remarquons que lorsque on utilise les wildcards (\texttt{*, ?, ...}), les redirections (\texttt{>,>{}>}) et les pipes (\texttt{|}), ceux-ci ne sont pas affichés par Mecho. Mecho tout comme \texttt{echo} ne reçoit pas ces symboles en paramètre. Ils sont en effet filtrés et traités par le Shell. 
+\item En écrivant notre commande Mecho il apparaît clairement que c'est le shell qui interprète ces caractères spéciaux et réalise les opérations qu'ils cachent, avant d'exécuter votre programme. De la même manière, dans la commande \texttt{ls > f} ce n'est pas la commande \texttt{ls} qui gère la redirection.
+\item Quand vous écrirez votre propre shell (bientôt) vous aurez appris à gérer les redirections les pipes et les wildcards tout comme le shell le fait ...
+\item Le but de cet exercice était de découvrir une partie de travail que le shell prend en charge lorsque une commande est appelée. Il est donc très important de mentionner cela dans ce commentaire ;-)
+\item Vous travaillerez de cette manière pour tous les exercices du laboratoire.
+\end{itemize}
+\subsection{Voir}
+\texttt{man bash} pour le fonctionnement du shell bash
+\newpage

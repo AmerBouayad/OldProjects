@@ -1,0 +1,13 @@
+Résultat de la compilation: 
+code9.cpp: In function ‘int main()’:
+code9.cpp:17:15: error: call to non-constexpr function ‘int fib(int)’
+     Number<fib(5)> n;
+            ~~~^~~
+code9.cpp:17:15: error: call to non-constexpr function ‘int fib(int)’
+code9.cpp:17:18: note: in template argument for type ‘int’ 
+     Number<fib(5)> n;
+                  ^
+code9.cpp:17:20: warning: unused variable ‘n’ [-Wunused-variable]
+     Number<fib(5)> n;
+                    ^
+(ERREUR: la compilation a échouée!)

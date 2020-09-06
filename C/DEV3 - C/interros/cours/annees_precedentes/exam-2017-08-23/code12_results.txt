@@ -1,0 +1,17 @@
+Résultat de la compilation: 
+code12.cpp: In instantiation of ‘class Brol<int>’:
+code12.cpp:21:15:   required from here
+code12.cpp:10:5: error: ‘Brol<T>::Brol(int&) [with T = int]’ cannot be overloaded
+     Brol(int & i)
+     ^~~~
+code12.cpp:6:5: error: with ‘Brol<T>::Brol(T&) [with T = int]’
+     Brol(T & t)
+     ^~~~
+code12.cpp: In function ‘int main()’:
+code12.cpp:21:17: error: cannot bind non-const lvalue reference of type ‘int&’ to an rvalue of type ‘int’
+     Brol<int>b(2);
+                 ^
+code12.cpp:6:5: note:   initializing argument 1 of ‘Brol<T>::Brol(T&) [with T = int]’
+     Brol(T & t)
+     ^~~~
+(ERREUR: la compilation a échouée!)

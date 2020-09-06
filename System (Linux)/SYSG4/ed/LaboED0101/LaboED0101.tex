@@ -1,0 +1,70 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 01-01 - Partitionnement DOS - fdisk}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap\\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Être capable de partitionner un disque avec une table de type MBR. Être capable de décrire les partitions
+La démonstration de cette manipulation ne sera pas automatisée. Vous ne devrez pas écrire de script Demo.
+
+\subsection{Manipulation}
+
+Cette partie du laboratoire se fait en tant qu'administrateur. Soyez très prudent et réfléchissez aux commandes que vous tapez !
+N'utilisez le mode administrateur que quand c'est indispensable, c'est une mauvaise habitude de travailler en root à d'autres moments.\\
+Demandez le mot de passe root au responsable du laboratoire.
+
+\subsubsection{Partitionnons un disque}
+
+fdisk permet de partitionner un disque avec une table de partitions MBR. Il faut lui donner comme argument le pilote associé au disque (/dev/sdb, /dev/sdc, ...) que l'on souhaite partitionner. Ici, nous utiliserons uniquement des stick usb de 32 GiB comme disque. Le partitionnement détruit toutes les données du support : il ne faut pas se tromper en donnant le nom du pilote (vous vous abstiendrez de partitionner /dev/sda donc) !!!. Pour travailler de façon sécurisée, vous procéderez comme suit :
+
+\begin{enumerate}
+\item N'utilisez que le stick usb que vous partitionnez, ôtez tous les autres
+\item Placez le stick usb, attendez une seconde et tapez dmesg
+\item Les dernières lignes affichées de cette commande vous donnent le nom du pilote associé au stick (sdb, sdc, sdd, ...), par exemple sdb.
+\item Tapez fdisk /dev/sd? où ? est la lettre ci dessus
+\item Affichez l'aide de la commande fdisk
+\item Observez l'alignement de vos partitions
+\item Quelle est la signification du champ Secteurs ?
+\end{enumerate}
+
+\subsubsection{Choix des partitions}
+
+Il suffit maintenant de dire ce que vous souhaitez à fdisk. Par exemple, après avoir créé une nouvelle table de partitions DOS, créez sur ce device 3 partitions : 2 primaires, et une logique. Vous choisirez des tailles de partition <= 2GiB. réez une partition primaire de 1000 secteurs.
+Affichez cette table dans fdisk et confirmez votre souhait en l'écrivant sur le stick.\\
+Vérifiez l'état de votre table par la commande \emph{fdisk -l /dev/???}
+
+\subsection{Lire la table des partitions via un programme c}
+
+\subsubsection{Énoncé}
+
+Écrire un programme qui, comme fdisk, affiche la tables des partitions d'un disque. Ce programme utilisera un seul argument : le nom du pilote de ce disque. On se contentera d'afficher les partitions primaires uniquement.
+\subsubsection{Une solution}
+
+\lstinputlisting{LaboED0101/SOURCES/LectMBR.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item La table des partitions se trouve dans le MBR du disque ou du stick usb. Il convient de ne pas l'écraser lors d'une copie d'un programme de chargement au risque de perdre tout le contenu du disque ou du stick
+\item Un device est rattaché au système de fichiers via le répertoire /dev, il peut être lu comme si c'était un fichier. Les premiers 512 bytes lus seront le MBR du device.\\
+\item Toutefois, comme la mise au point du programme est fastidieuse si on souhaite privilégier la sécurité : modification du programme en tant que user, test en tant que root. Il est plus simple de créer une fois un fichier représentant le MBR et de tester le programme sur base de ce fichier. Vous pouvez créer ce fichier via la commande administrateur \verb*dd : dd if=/dev/... of=MBR bs=512 count=1*\\
+\item Dans le programme en c il faudra inhiber l'alignement sur les champs des structures. On utilise pour cela l'attribut packed.
+\item Les partitions sont alignées sur une frontière de cylindre
+\item Vous pouvez automatiser simplement fdisk en lui précisant les réponses dans un fichier et en utilisant la redirection de l'entrée standard < ou en utilisant la double redirection << dans le script Demo. 
+\end{itemize}
+
+\subsection{En roue libre}
+\begin{itemize}
+\item Adaptez le programme précédent pour afficher le type des partitions.
+\item Que faudrat-il faire pour afficher les données de la partition logique ?
+\end{itemize}
+\newpage

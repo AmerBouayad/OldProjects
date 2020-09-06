@@ -1,0 +1,5 @@
+Résultat de la compilation: 
+(la compilation a réussie)
+Résultat de l'exécution: 
+3
+-1

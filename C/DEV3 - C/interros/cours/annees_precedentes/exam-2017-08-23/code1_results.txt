@@ -1,0 +1,17 @@
+Résultat de la compilation: 
+code1.cpp: In function ‘int main()’:
+code1.cpp:28:10: error: no matching function for call to ‘B::f(int&)’
+     b.f(n);
+          ^
+code1.cpp:18:10: note: candidate: void B::f(int, int)
+     void f(int n, int m)
+          ^
+code1.cpp:18:10: note:   candidate expects 2 arguments, 1 provided
+code1.cpp:29:10: error: no matching function for call to ‘B::f(char&)’
+     b.f(c);
+          ^
+code1.cpp:18:10: note: candidate: void B::f(int, int)
+     void f(int n, int m)
+          ^
+code1.cpp:18:10: note:   candidate expects 2 arguments, 1 provided
+(ERREUR: la compilation a échouée!)

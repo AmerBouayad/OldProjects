@@ -1,0 +1,50 @@
+#!/bin/bash
+
+
+#
+# remplace les occurrences de $1 avec $2 dans $3
+#
+function remplace  (){
+fich="$3"
+cp $fich temp; sed s/$1/$2/g temp >  $fich
+rm -f temp
+}
+
+if [ -z "$6" ]
+then
+	echo "usage : $0 <oldarg> <oldChap> <oldNumber> <newarg> <newChap> <newNumber>"
+	echo "example $0 FS 04 01 ED 01 01 "
+	exit 1
+fi
+
+OLD_ARG="$1"
+OLD_CHAP="$2"
+OLD_NUMBER="$3"
+NEW_ARG="$4"
+NEW_CHAP="$5"
+NEW_NUMBER="$6"
+OLD_REP="Labo$OLD_ARG$OLD_CHAP$OLD_NUMBER"
+NEW_REP="Labo$NEW_ARG$NEW_CHAP$NEW_NUMBER"
+OLD_TEXFICH="$OLD_REP"".tex"
+NEW_TEXFICH="$NEW_REP"".tex"
+
+echo "$1 -> $4"
+echo "$2-$3 -> $5-$6"
+echo "$OLD_TEXFICH -> $NEW_TEXFICH"
+echo "$OLD_REP -> $NEW_REP"
+
+test  -d "$OLD_REP"  ||  (echo "$OLD_REP" non trouvé; ls; exit)
+cd $OLD_REP
+test  -f "$OLD_TEXFICH"  ||  (echo "$OLD_TEXFICH" non trouvé; ls)
+test  -f "$OLD_TEXFICH"  &&  mv "$OLD_TEXFICH" "$NEW_TEXFICH" 
+
+
+
+test  -f "$NEW_TEXFICH"  ||  (echo "$NEW_TEXFICH" non crée; ls)
+test  -f "$NEW_TEXFICH"  &&  (remplace "$OLD_CHAP-$OLD_NUMBER" "$NEW_CHAP-$NEW_NUMBER" "$NEW_TEXFICH")
+test  -f "$NEW_TEXFICH"  &&  (remplace "$OLD_REP" "$NEW_REP" "$NEW_TEXFICH") # ajuster les chemins pour les sources
+
+(cd SOURCES ; for i in Demo* Make* *.c *.h ; do remplace "$OLD_ARG" "$NEW_ARG" "$i" ; remplace "$OLD_CHAP-$OLD_NUMBER" "$NEW_CHAP-$NEW_NUMBER" "$i" ; done)
+
+cd ..
+test  -d "$OLD_REP"  &&  mv "$OLD_REP" "$NEW_REP" 

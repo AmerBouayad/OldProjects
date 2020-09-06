@@ -1,0 +1,17 @@
+Résultat de la compilation: 
+code11.cpp: In function ‘int main()’:
+code11.cpp:26:10: error: no matching function for call to ‘Fille::f(int&)’
+     b.f(n);
+          ^
+code11.cpp:16:10: note: candidate: void Fille::f(int, int)
+     void f(int n, int m)
+          ^
+code11.cpp:16:10: note:   candidate expects 2 arguments, 1 provided
+code11.cpp:27:10: error: no matching function for call to ‘Fille::f(char&)’
+     b.f(c);
+          ^
+code11.cpp:16:10: note: candidate: void Fille::f(int, int)
+     void f(int n, int m)
+          ^
+code11.cpp:16:10: note:   candidate expects 2 arguments, 1 provided
+(ERREUR: la compilation a échouée!)

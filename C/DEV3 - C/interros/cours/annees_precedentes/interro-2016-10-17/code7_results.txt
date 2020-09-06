@@ -1,0 +1,11 @@
+Résultat de la compilation: 
+In file included from code7_B.cpp:4:0,
+                 from code7.cpp:2:
+code7_A.cpp:8:5: error: ‘B’ does not name a type
+     B b;
+     ^
+code7.cpp: In function ‘int main()’:
+code7.cpp:10:7: error: ‘class A’ has no member named ‘b’
+     a.b = b;
+       ^
+(ERREUR: la compilation a échouée!)

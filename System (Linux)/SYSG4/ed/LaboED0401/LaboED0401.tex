@@ -1,0 +1,40 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 04-01 - Commande filtre, cat sans argument en c }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap - Installation Classique \\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+Une commande filtre en Unix est une commande qui lit des données sur stdin et les restitue transformées sur stdout.\emph{cat}, utilisée sans arguments est la plus simple des "commandes filtre", elle n'effectue aucune transformation de données. Une commande filtre peut être utilisée à gauche et à droite d'un pipe.\\ 
+Testez la commande cat sans arguments.\\
+Ce programme très simple ne fait qu'écrire sur la sortie standard (stdout) ce qu'il lit sur l'entrée standard (stdin) jusqu'à la fin de celle-ci. Dans le cas du clavier, la fin de stdin est provoquée par la combinaison de touches CTRL-D (très différent de CTRL-C) qui tue les programmes liés au terminal.\\
+\emph{cat} et Mcat sans argument permettent d'afficher le contenu d'un fichier (<) ou de créer un fichier avec un contenu introduit au clavier (>). \\
+Réécrivez la commande cat sans arguments en c et baptisez-la Mcat. Votre Mcat doit pouvoir réaliser les fonctions équivalentes de \emph{cat} dans les situations suivantes : Mcat, ls | Mcat, Mcat > fichier, ls | Mcat >> fichier , Mcat < fichier
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboED0401/SOURCES/Mcat.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item 
+Nous avons découvert que les redirections et les pipes ne sont pas traités comme des arguments, ils sont donc gérés au préalable par le shell. Dans l'énoncé, on fait donc toujours appel à Mcat sans argument. 
+\item La logique du programme Mcat est de recopier sur stdout tout ce qu'on lit sur stdin jusqu'à la fin du fichier stdin. 
+\item La fin du fichier stdin "clavier" se fait par CTRL-D.
+\item La lecture et l'écriture se font par appel au S.E. Ceci est beaucoup plus visible en assembleur.
+\item C'est le S.E. qui gère les buffers d'E/S. Le programme ne sera pas plus rapide en utilisant un buffer plus grand.
+\item Une commande qui utilise stdin et stdout est appelée un filtre. cat est un filtre qui 'laisse tout passer'.
+\item Chaque commande que vous utilisez peut être parfois vue comme un filtre. Cela dépend de la commande et de la façon de l'utiliser. Seuls les filtres peuvent être placés entre deux pipes.
+\end{itemize}
+
+\subsection{En roue libre}
+Écrivez le script Demo qui montre que le code fait bien ce qu'on attend de lui. Référez-vous à l'énoncé.
+\newpage

@@ -1,0 +1,49 @@
+#!/bin/bash
+#NOM    : Finaliser
+#CLASSE : Process - LaboProcess
+#OBJET  : Finaliser avant mise à disposition
+#HOWTO	: ./Finaliser
+#AUTEUR	: J.C. Jaumain, 07/2011
+# --------------------------------------------------
+clear
+rep=""
+while [ "$rep" != 'y' -a "$rep" != 'n' ]
+	do
+	clear
+	echo -n "Exécuter un make clean de tous les Makefile ? (y/n)"
+	read rep
+	done
+if [ "$rep" == 'y' ]
+	then
+	x=$(find . -name Makefile)
+	for i in $x; do ( cd ${i%%Makefile}; make clean); done
+	fi
+# --------------------------------------------------
+clear
+rep=""
+while [ "$rep" != 'y' -a "$rep" != 'n' ]
+	do
+	clear
+	echo -n "Exécuter une vérification orthographique de tous les .tex ? (y/n)"
+	read rep
+	done
+if [ "$rep" == 'y' ]
+	then
+	x=$(find ./ -name '*.tex')
+	for i in $x
+		do
+		rep=""
+		while [ "$rep" != 'y' -a "$rep" != 'n' ]
+			do
+			clear
+			echo -n "Vérifcation orthographique de $i ? (y/n)"
+			read rep
+			done
+		if [ "$rep" == 'y' ]
+			then
+			aspell -t --encoding='utf-8' -c $i
+			fi
+		done
+	fi
+find . -name '*.tex.bak' -exec rm -f '{}' \;
+# --------------------------------------------------

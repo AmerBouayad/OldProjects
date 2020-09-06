@@ -1,0 +1,53 @@
+#!/bin/bash
+#NOM    : Demo
+#CLASSE : ED - LaboED 03-02
+#OBJET  : réservé au makefile
+#AUTEUR	: J.C. Jaumain, 07/2011
+clear
+C='\033[44m'
+E='\033[32m\033[1m'
+W='\033[31m\033[1m'
+N='\033[0m'
+if [ $(id -u) -ne 0 ] 
+then
+	echo -e "${W}vous n'êtes pas l'utilisateur root${N}"
+	echo
+	exit 1
+fi
+
+echo "Démonstration du SUID"
+echo "----------------------------------"
+echo "Création du fichier Confidentiel contenant le texte \"LE SECRET\";"
+echo -e "   Éxecution de ${E}echo \"LE SECRET\" > Confidentiel${N}"
+echo "LE SECRET" > Confidentiel
+echo -e "${C}             --> Enter pour continuer${N}"
+read
+echo "----------------------------------"
+echo 'Limitation des droits du fichier Confidentiel;'
+echo -e "   Éxecution de ${E}chmod 600 Confidentiel${N}"
+chmod 600 Confidentiel
+echo -e "${C}             --> Enter pour continuer${N}"
+read
+echo 'Modification des droits du programme Conf'
+echo -e "   Éxecution de ${E}chmod 4755 Conf${N}"
+chmod 4755 Conf
+echo -e "${C}             --> Enter pour continuer${N}"
+read
+echo "------------------------------------------------"
+echo "Affichage de la situation à l'aide des commandes ls :"
+echo "------------------------------------------------------------"
+ls -ld .
+ls -l . | head -n 4
+echo -e "${C}             --> Enter pour continuer${N}"
+read
+echo "------------------------------------------------"
+echo "La suite de la démonstration doit se faire"
+echo "sous le compte d'un autre utilisateur" 
+echo "ce qui n'est pas 'propre' dans un script"
+echo "Donc : "
+echo
+echo "Il vous reste à vérifier, à partir d'un autre utilisateur"
+echo -e "1) Que ${E}cat Confidentiel${N} n'affiche pas CONFIDENTIEL (car 600)"
+echo -e "2) Que ${E}./Conf${N} affiche bien CONFIDENTIEL (car 4755 et 600)"
+echo -e "${C}             --> Enter pour continuer${N}"
+read

@@ -1,0 +1,44 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Intro - LaboIntro 01-05 - sans Makefile }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap \\\hline
+Date :		& 01/2016 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Reprenez les fichiers source de la solution de l'exercice 0101, on renommera TestMake.c TestMake2.c. 
+Ajoutez un deuxième affichage d'une constante définie dans un deuxième fichier d'include de nom TestMake2.h (même préfixe que le code c)
+
+Exécutez la commande \texttt{make TestMake2} sans avoir créé de fichier Makefile.
+
+Quel comportement a la commande dans ce cas ? 
+
+Répétez la commande après avoir exécuté la commande \texttt{touch TestMake2.c}
+
+Répétez la commande après avoir modifié la valeur de la constante MAX dans le fichier \emph{MonInclude.h}
+
+Répétez la commande après avoir modifié la valeur de la constante MIN dans le fichier \emph{TestMake2.h}
+
+\lstinputlisting{LaboIntro0105/SOURCES/MonInclude.h}
+\lstinputlisting{LaboIntro0105/SOURCES/TestMake2.h}
+\lstinputlisting{LaboIntro0105/SOURCES/TestMake2.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item \texttt{make} utilise ici des règles par défaut pour les compilations en c.
+\item \texttt{make} considère à défaut d'information qu'une cible dépendra de fichiers de même préfixe. Dans ce cas on doit générer TestMake2 et le fichier TestMake2.c est présent.
+\item Dans ce cas \texttt{make} fait appel au compilateur cc
+\item Pour l'exemple nous avons ajouté un fichier d'include de même préfixe que le fichier exécutable \emph{TestMake2}.
+\item Toutefois, les liens avec des éventuels fichiers d'include ne sont pas établis par défaut, même si ceux-ci ont le même préfixe. Une modification de \emph{TestMake2.h} ne génère  pas de nouvelle compilation.
+\item En présence d'un Makefile, \texttt{make} essayera de générer de cette même manière, une cible pour laquelle aucune règle explicite n'est fournie.
+\item Nous préférerons l'écriture de règles explicites
+\end{itemize}
+\newpage

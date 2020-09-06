@@ -1,0 +1,37 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Intro - LaboIntro 01-03 - script Demo}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& 0S 42.3 Leap\\\hline
+Date :		& 08/2016 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+Il est temps de s'attarder sur l'écriture d'un script de démonstration bash, on le nommera \emph{Demo}.\\
+Soit un Makefile solution de l'exercice précédent que l'on renommera ici MonMakefile, essayons de montrer de manière automatisée que le comportement de MonMakefile correspond à notre attente. 
+
+Vous veillerez à utiliser la commande \texttt{chmod} pour donner le droit d'exécution au script Demo.\\
+Vous pourrez dès lors lancer son exécution par la commande \texttt{./Demo}\\
+La première ligne du script est \texttt {\#!/bin/bash}. Lorsque on essaye d'exécuter ce script via la commande ./Demo dans le shell, cette ligne indique au shell la nature de ce fichier : un fichier de commandes destiné à l'interpréteur \texttt{/bin/bash} et non un exécutable.\\
+
+\subsection{Une Solution}
+
+\lstinputlisting{LaboIntro0103/SOURCES/Demo}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Le script créé ici a pour seul but de montrer de manière automatisée le comportement de notre fichier MonMakefile. 
+\item L'écriture de scripts est très intéressante dans le cas de tâches administratives récurrentes.
+\item Lors de nos laboratoires de SYStème, nous allons travailler un peu différemment : le script sera la démonstration de l'exercice. L'exercice  qui suit celui-ci est une illustration de cette manière de travailler.
+\item Tous nos exercices de laboratoire utiliseront ces deux outils. 
+\end{itemize}
+\subsection{Voir}
+man bash
+Scripts sous linux - C. Blaess
+\newpage

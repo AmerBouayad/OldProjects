@@ -1,0 +1,41 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 02-01 - Inodes - stat,lstat}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap - Installation Classique \\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrivez un programme qui affiche le contenu de l'inode d'un fichier passé en argument.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboED0201/SOURCES/ContenuInode.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item man 2 stat donne toutes les informations nécessaires pour l'écriture de ce programme.
+\item Le lien software lienS est déréférencé par l'appel système fstat.
+\item lstat donne des informations sur le fichier lien.
+\item Le numéro du propriétaire est mémorisé dans l'inode du fichier. L'association numéro - nom du propriétaire se fait à l'aide du fichier /etc/passwd. Si on copie un fichier d'un PC vers un autre, il peut changer de propriétaire !!!
+\item Le nombre de blocs est souvent exprimé en secteurs de 512 bytes. du -h (alias pour du) donne cette information en K (Kib=1024 bytes)
+\end{itemize}
+
+\subsection{En roue libre}
+
+Adaptez l'exercice :\\
+\begin{itemize}
+\item en y ajoutant un lien hardware
+\item en y ajoutant le détail pour le lien software.
+\end{itemize}
+Créez ensuite le fichier archive tar pour cet exercice uniquement en adaptant la structure et les fichiers latex fournis.\\
+Montrez le fichier tar à votre professeur.
+\newpage

@@ -1,0 +1,39 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 04-02 - shell et background }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 02/2015 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Modifier le shell simple pour y ajouter la notion de background.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0402/SOURCES/ShellBack.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item bg est mis à 0 à chaque passage et vaut 1 si le dernier mot de la ligne est \&  
+\item Le test i>0 empêche que la lecture de tokens[i-1] ne provoque une erreur de segmentation si la ligne est vide.
+\item tokens[i-1] est remis à 0 pour que le symbole \& ne soit pas passé à la commande.
+\item Un process en bg => pas de wait => le process reste zombie tant que le shell ne se termine pas. Ce problème sera réglé lors des l'étude du chapitre suivant (IPC, les signaux).
+\item waitpid et pas wait qui est insuffisant ici. Si vous utilisez un simple wait :
+	\begin{itemize}
+	\item Vous lancez un process court en bg;
+	\item Le process en bg se termine, vous gardez ce process fils à l'état zombie;
+	\item Vous lancez une commande longue en fg;
+	\item wait (0) attend la fin d'un fils quelconque, le zombie dans ce cas puisqu'il est fini. 
+	\item Le zombie est libéré, le père débloqué affiche le prompt
+	\item On aurait une inversion de comportement : le process en fg s'exécute comme si il était en bg.
+	\end{itemize}
+\end{itemize}
+\newpage

@@ -1,0 +1,17 @@
+Résultat de la compilation: 
+code6.cpp: In instantiation of ‘struct Poney<int>’:
+code6.cpp:20:16:   required from here
+code6.cpp:9:5: error: ‘Poney<T>::Poney(int&) [with T = int]’ cannot be overloaded
+     Poney(int & i)
+     ^~~~~
+code6.cpp:5:5: error: with ‘Poney<T>::Poney(T&) [with T = int]’
+     Poney(T & t)
+     ^~~~~
+code6.cpp: In function ‘int main()’:
+code6.cpp:20:18: error: cannot bind non-const lvalue reference of type ‘int&’ to an rvalue of type ‘int’
+     Poney<int>b(2); b.t = 3;
+                  ^
+code6.cpp:5:5: note:   initializing argument 1 of ‘Poney<T>::Poney(T&) [with T = int]’
+     Poney(T & t)
+     ^~~~~
+(ERREUR: la compilation a échouée!)

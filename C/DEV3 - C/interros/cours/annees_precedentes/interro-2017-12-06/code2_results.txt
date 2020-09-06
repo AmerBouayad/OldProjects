@@ -1,0 +1,17 @@
+Résultat de la compilation: 
+code2.cpp: In function ‘int main()’:
+code2.cpp:20:5: warning: exception of type ‘exceptB’ will be caught
+     catch (exceptB & e)
+     ^~~~~
+code2.cpp:16:5: warning:    by earlier handler for ‘exceptA’
+     catch (exceptA & e)
+     ^~~~~
+code2.cpp:24:5: warning: exception of type ‘exceptC’ will be caught
+     catch (exceptC & e)
+     ^~~~~
+code2.cpp:20:5: warning:    by earlier handler for ‘exceptB’
+     catch (exceptB & e)
+     ^~~~~
+(la compilation a réussie)
+Résultat de l'exécution: 
+I␣caught␣an␣A

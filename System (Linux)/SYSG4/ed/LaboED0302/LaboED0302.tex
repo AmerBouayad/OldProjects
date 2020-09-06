@@ -1,0 +1,33 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 03-02 - Droits des fichiers  - SUID}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap - Installation Classique \\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Comme administrateur, créez un fichier appelé Confidentiel qui contient le texte 'LE SECRET'. 
+Écrivez un programme Conf qui affiche "Contenu du fichier Confidentiel : ", suivi du contenu du fichier appelé Confidentiel. 
+Modifiez les droits de telle façon que personne d'autre que l'utilisateur root ne puisse afficher le contenu du fichier appelé Confidentiel mais que tout le monde puisse exécuter le programme Conf et afficher ainsi le contenu du fichier Confidentiel.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboED0302/SOURCES/Conf.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item La commande \verb+chmod 4755 Conf + positionne le bit SUID du programme Conf.  Le \emph{effective uid (euid)} de l'utilisateur qui exécute Conf sera modifié en le uid du propriétaire de Conf (root). Tout utilisateur aura le droit de voir le contenu de votre fichier  Confidentiel uniquement en exécutant le programme Conf. Ce droit lui sera refusé si il veut visionner le fichier par d'autres moyens (par exemple par \emph{cat Confidentiel}).
+\item Quels droits a l'exécutable \verb+/bin/cat+ ?
+\item Quelle conséquence aurait la commande \verb+chmod 4755 /bin/cat+, exécutée par un administrateur ?
+\item ATTENTION !!! Veillez à remettre les bons droits à \verb+cat+ si vous les avez modifiés !
+\item Quittez le login administrateur.
+\end{itemize}
+\newpage

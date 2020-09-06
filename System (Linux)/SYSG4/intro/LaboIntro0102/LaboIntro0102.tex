@@ -1,0 +1,52 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Intro - LaboIntro 01-02 - Compilation de plusieurs sources }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& 0S 42.3 Leap \\\hline
+Date :		& 08/2016\\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+Écrivez un Makefile qui réalise la compilation et l'édition de liens de plusieurs sources en C.
+
+\lstinputlisting{LaboIntro0102/SOURCES/Makefile}
+
+\lstinputlisting{LaboIntro0102/SOURCES/MonInclude.h}
+
+\lstinputlisting{LaboIntro0102/SOURCES/TestMake2.c}
+
+\lstinputlisting{LaboIntro0102/SOURCES/boucle.h}
+
+\lstinputlisting{LaboIntro0102/SOURCES/boucle.c}
+
+\subsection{Commentaires}
+
+Le fichier Makefile de cet exercice n'est pas écrit de manière optimale.
+
+En effet la moindre modification de fichier source c ou de fichier d'include amène à recompiler chaque fichier source et refaire l'édition de liens des objets générés pour produire le fichier exécutable. 
+\\Or, lorsque un fichier source est modifié, seul ce dernier nécessite d'être recompilé avant de refaire l'édition de liens. \\
+La compilation de chaque source n'est donc nécessaire que si le fichier source même ou un des fichiers d'include qu'il utilise ont été modifiés. \\
+Par ailleurs, une édition de liens pour générer un exécutable est nécessaire dès qu'un fichier objet qui le construit a été généré par une compilation.\\ Nous venons d'établir des dépendances entre fichiers : un exécutable dépend de fichiers objet qui à leur tour dépendent de fichiers sources et include. Ceci va nous aider à améliorer notre Makefile. 
+
+\begin{itemize}
+\item Il est nécessaire de recompiler une unité de compilation (et donc générer un fichier objet .o) si et seulement si le fichier .o a été supprimé ou le fichier source ou un des include files a été modifié.
+\item Il est nécessaire de faire une édition de liens si et seulement si le fichier exécutable a été supprimé ou un des fichiers .o (objets) est plus récent que l'exécutable. Ces derniers nécessitent d'ailleurs peut-être d'être rafraîchis en premier lieu. Les pré-requis sont examinés en cascade dans le cas de dépendances.
+
+\end{itemize}
+
+\subsection{En Roue Libre}
+\par Identifiez les dépendances réelles entre les différents fichiers et réécrivez les règles en respectant ces dernières de manière à ce que le minimum de compilations indispensables soit réalisé (une des deux compilations et où l'édition de liens).
+
+\par Une compilation séparée est obtenue via l'option -c du compilateur.\\
+
+\par Réécrivez un Makefile amélioré et vérifiez les
+ point suivants :
+\par la commande  \texttt{make} ne réalise dès à présent l'édition de liens que lorsque elle est précédée par la commande \texttt{touch boucle.o}.
+
+\par la commande  \texttt{make} ne recompile pas le fichier boucle.c lorsqu'elle est précédée par la commande \texttt{touch MonInclude.h}.
+\newpage

@@ -1,0 +1,65 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 01-02 - Partitionnement GPT - fdisk}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap -installation Classique \\\hline
+Date :		& 08/2018\\\hline
+%Author:		& MBA\\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Être capable de partitionner un disque avec une table de type GPT. 
+Être capable de décrire les partitions. La démonstration de cette manipulation ne sera pas automatisée. Vous ne devrez pas écrire de script Demo. \\
+
+\subsection{Manipulation}
+
+Cette partie du laboratoire se fait en tant que administrateur. Soyez très prudent et réfléchissez aux commandes que vous tapez !
+N'utilisez le mode administrateur que quand c'est indispensable, c'est une mauvaise habitude de travailler en root à d'autres moments.\\
+
+\subsubsection{Partitionnons un disque}
+
+fdisk permet de partitionner un disque avec une table de partitions GPT. Il faut lui donner comme argument le pilote associé au disque (/dev/sdb, /dev/sdc, ...) que l'on souhaite partitionner. Ici, nous utiliserons uniquement des stick usb de 32 Gib comme disque. Le partitionnement détruit toutes les données du support : il ne faut pas se tromper en donnant le nom du pilote (vous vous abstiendrez de partitionner /dev/sda donc) !!!. Pour travailler de façon sécurisée, vous procéderez comme suit :
+
+\begin{enumerate}
+\item N'utilisez que le stick usb que vous partitionnez, ôtez tous les autres
+\item Placez le stick usb, attendez une seconde et tapez dmesg suivi de lsblk.
+\item Les dernières lignes affichées par la commande dmesg vous donnent le nom du pilote associé au stick (sdb, sdc, sdd, ...), par exemple sdb.
+\item Tapez \emph{fdisk /dev/sd?} où ? est la lettre ci dessus
+\item Affichez l'aide de la commande fdisk
+\end{enumerate}
+
+\subsubsection{Choix des partitions}
+
+Il suffit maintenant de dire ce que vous souhaitez à fdisk. Par exemple, après avoir créé une nouvelle table de partitions GPT, obtenez le partitionnement suivant :
+
+\begin{itemize}
+\item partition 1 de 1Gib
+\item partition 2 de 2Gib
+\end{itemize}
+
+Affichez cette table avec fdisk et confirmez votre souhait en l'écrivant sur le stick.
+
+\subsection{Lire la table des partitions via un programme c}
+
+\subsubsection{Énoncé}
+
+Écrire un programme qui, comme fdisk, affiche la tables des partitions GPT. Ce programme lira également l'entête secondaire et le descripteur secondaire de la partition1. Ce programme utilisera un seul argument : le nom du pilote de ce disque.
+\subsubsection{Une solution}
+
+\lstinputlisting{LaboED0102/SOURCES/LectGPT.c}
+
+\subsection{Commentaires}
+\begin{itemize}
+\item La table des partitions se trouve dans les secteurs suivants du disque ou du stick usb.
+\item L'attribut packed sert à forcer l'alignement des champs d'une structure.
+\item L'entète de partidion secondaire est le dernier secteur du disque.
+\end{itemize}
+\subsection{En roue libre}
+Dans le code c fourni, réalisez la restauration du descripteur de la partition 2 à partir du descripteurs secondaire qui se trouve en fin de disque. Soyez très prudent dans la spécification du nom de device pour cette opérationi d'écriture, une erreur peut endommager votre installation. Affichez également le type de la partition primaire décrite dans le MBR.
+\newpage

@@ -1,0 +1,50 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 01-03 - Structure F.S. - mkfs}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 43.2 Leap - Installation Classique \\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Être capable de créer un F.S. et de l'utiliser.\\
+Cet exercice de laboratoire ne sera pas automatisé. Vous ne devez pas créer de script Demo.
+
+\subsection{Manipulation}
+
+Cette partie du laboratoire se fait en tant que administrarteur. Soyez très prudent et réfléchissez aux commandes que vous tapez !
+N'utilisez le mode administrateur que quand c'est indispensable.\\
+Demandez le mot de passe root au responsable du laboratoire.
+
+\subsubsection{Partitionner un disque et formater les partitions}
+
+Vous savez partitionner un disque. Pour que ces partitions soient utilisables, il faut y inscrire la structure d'un F.S. de votre choix. (=formater les partitions)
+
+Adaptez sdb, sdc, sdd, ... suivant votre situation.
+
+A l'aide de fdisk, obtenez deux partitions primaires et une logique, toutes de taille <= 2Gib\\
+vérifiez le partitionnement et formatez quelques partitions en adaptant la lettre ? :
+
+\begin{lstlisting}
+fdisk -l
+mkfs.vfat /dev/sd?1  # fat 16
+mkfs.ext2 /dev/sd?2
+mkfs.ext2 /dev/sd?5
+fdisk -l
+\end{lstlisting}
+
+La table des partitions tient-elle compte de vos changements de type ?
+
+\subsection{Commentaires}
+\begin{itemize}
+\item fdisk permet de partitionner, mkfs permet de formater.
+\item ces commandes nécessitent les droits administrateur
+\end{itemize}
+
+\newpage

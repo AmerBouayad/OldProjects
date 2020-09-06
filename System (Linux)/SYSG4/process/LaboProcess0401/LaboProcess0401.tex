@@ -1,0 +1,34 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 04-01 - shell simple }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrire un shell simple capable d'exécuter n'importe quelle commande externe avec un nombre d'argument quelconque, et la commande interne exit. 
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0401/SOURCES/Shell.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Le message 'commande invalide' ne demande pas de if. Si exec a trouvé l'exécutable, il écrase le process courant.
+\item Le fork clone le shell courant en un deuxième shell. Ce fils est écrasé par un exécutable si exec le trouve. Sinon, le fils reste un shell. Si on oublie de terminer le fils avec exit(), celui-ci reste un shell et deux shell s'exécutent. L'utilisateur devra alors taper deux fois la commande interne exit pour en sortir.
+%\item Le code en commentaire permet d'utiliser ce shell avec un pipe, \fbox{echo ls | ./Shell} par exemple.
+\item Le script Demo contient le symbole <<. Ce n'est pas une indirection mais définit le symbole de fin de donnée pour le process.
+\end{itemize}
+\subsection{En roue libre}
+\begin{itemize}
+\item Corrigez ce shell simple : votre shell doit se comporter correctement si l'utilisateur introduit le nom d'un exécutable qui n'existe pas.
+\end{itemize}
+\newpage

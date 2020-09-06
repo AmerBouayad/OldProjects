@@ -1,0 +1,35 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 02-02 - Fichiers creux - lseek, ls, du -h}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap - Installation Classique \\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrivez un programme qui crée un fichier contenant 'Hello world' au début du fichier et 'Bye world' en position 100000 grâce à l'appel système lseek.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboED0202/SOURCES/FichierCreux.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Ce fichier a une taille de 100009 bytes et occupe 3 blocs de 1K sur le disque. Le premier bloc référencé par le $1^{er}$ pointeur contient Hello world, le deuxième bloc, référencé par le $13^{eme}$ pointeur, contient 256 pointeurs. Un de ceux-ci référence le bloc qui contient 'Bye world'. Les pointeurs 2-12,14 et 15 contiennent 0 car il ne pointent vers aucun bloc.
+\item Sur un F.S. de type FAT, le fichier occupera réellement 100K.
+\item Pour connaître la taille des blocs de votre FS, il suffit de créer un fichier de un byte et de regarder son occupation sur le disque. Elle est forcément de un bloc.
+\item Ce programme peut être utilisé pour créer des fichiers de grande taille (jusqu'à 2 Gib sur un système 32 bits) qui occupe très peu de place sur le disque. Mais ne copiez pas un tel fichier sur un stick usb en FAT !!!
+\item Ce programme, exécuté sur un F.S. de type ext2, ne prendra que quelques secondes car il écrit peu sur le disque. Inversement, ce même programme, exécuté sur un F.S. de type FAT, prendra plusieurs minutes car il écrit beaucoup sur le disque.
+\end{itemize}
+
+\subsection{En roue libre}
+Vérifiez et justifiez le comportement si on ajoute le flag O\_APPEND dans le paramètre flags du open. L'appel système lseek retourne-t-il une erreur dans ce cas ?
+
+\newpage

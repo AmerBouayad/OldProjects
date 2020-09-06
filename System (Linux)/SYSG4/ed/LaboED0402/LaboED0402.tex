@@ -1,0 +1,34 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 04-02 - cat avec arguments en c }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap - Installation Classique \\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Réécrivez la commande cat en c et baptisez la McatArgs. Votre Mcat doit pouvoir réaliser les fonctions équivalentes de cat sans option.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboED0402/SOURCES/McatArgs.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Les commandes telles que cat ne font pas partie du S.E. Elles sont fournies pour éviter que chacun reprogramme de telles commandes. Elles ne sont pas indispensables au fonctionnement du S.E.
+\item L'écriture d'une commande filtre suit quasi toujours le même canevas. Un main qui appelle un traitement pour chaque argument passé. Si il n'y a pas d'argument, le seul fichier traité est stdin.
+\item Cette commande fonctionne aussi avec des wildcards. C'est le shell qui interprète les wildcards et transforme le résultat en arguments. Pour cat, il n'y a pas de différence entre cat * et cat f1 f2 f3 si ces trois fichiers sont les seuls du répertoire courant.
+\item Vous pouvez obtenir une liste des commandes qui existent en regardant le contenu des répertoires /bin, /usr/bin, /sbin, /usr/sbin, ... et leur rôle à l'aide des pages de manuel, chapitre 1.
+\end{itemize}
+
+\subsection{En roue libre}
+Adaptez cet exercice pour réécrire la commande filtre head (man head)
+
+\newpage

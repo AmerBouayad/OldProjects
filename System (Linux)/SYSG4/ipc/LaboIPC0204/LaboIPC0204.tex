@@ -1,0 +1,39 @@
+
+\renewcommand{\titre}{\textcolor{blue}{ IPC - LaboIPC 02-04 - producteur-consommateur}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& MDV2007 Installation Classique \\\hline
+Date :		& 11/2017 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrire deux programmes prod.c et cons.c. Ils simulent le problème du producteur-consommateur. Le producteur lit stdin. Le consommateur affiche sur stdout.
+La mémoire partagée sera un tableau de 5 caractères.
+
+\subsection{Une solution}
+
+\lstinputlisting[language=c]{LaboIPC0204/SOURCES/cons.c}
+\lstinputlisting[language=c]{LaboIPC0204/SOURCES/prod.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Au cas où ce programme ne donne pas les résultats espérés, commencer par vérifier que les sémaphores sont bien libres.
+\item Le sémaphore PLEIN signifie nombre de cases pleines, 0 au début
+\item Le sémaphore VIDE signifie nombre de cases libres, 5 au début
+\item La fonction opsem est celle définie au laboratoire 0202.
+\end{itemize}
+
+\subsection{En roue Libre}
+
+\begin{itemize}
+\item Généralisez ce programme au cas où il y aurait plusieurs consommateurs qui tournent en même temps. Il faut partager et protéger l'accès à la variable tete. Vous aurez besoin d'une section critique.
+\item La suppression des sémaphores est immédiate, elle provoque une erreur dans le consommateur.
+\end{itemize}
+\newpage

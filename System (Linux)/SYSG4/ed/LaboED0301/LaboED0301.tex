@@ -1,0 +1,33 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 03-01 - Répertoires - opendir, readdir, lstat}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap - Installation Classique \\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrivez un programme qui affiche les noms et les numéros d'inode des objets de votre répertoire.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboED0301/SOURCES/ContenuRepertoire.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item En unix, un fichier caché est un fichier dont le nom commence par un .
+\item Pour obtenir la liste des fichiers réguliers, il faut ouvrir chaque fichier et vérifier son mode (soit via stat, soit via open et fstat : voir man 2 stat)
+\item Pour obtenir une liste récursive d'un répertoire, il faut écrire un programme récursif sans oublier d'exclure les répertoires . et .. (sinon boucle infinie !)
+\item Il est très difficile d'estimer la place libre d'un minidisque. L'espace total - la somme des occupations des différents fichiers (du) donne un nombre. Il reste possible d'écrire un fichier qui aura une taille supérieure à ce nombre (fichier creux). df donne un résumé des minidisques montés et de la place qu'il y reste. 
+\end{itemize}
+
+\subsection{En roue libre}
+Dans un dossier contenant des sous-dossiers non vides, écrivez le code en c qui réalise la même chose que la commande ls *. 
+\newpage

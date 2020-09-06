@@ -1,0 +1,23 @@
+#!/bin/bash
+#NOM    : Demo
+#CLASSE : IPC - LaboProcess 05-02
+#OBJET  : réservé au Makefile
+#AUTEUR	: M. Bastreghi, 09/2017
+C='\033[44m'
+E='\033[32m\033[1m'
+W='\033[31m\033[1m'
+N='\033[0m'
+clear
+echo "Démonstration du programme PipeShellErr.c"
+echo "--------------------------------------"
+echo
+echo -e "Exécution de ${E}ps aux | grep root | wc -l${N} :"
+ps aux | grep root | wc -l
+echo -e "${C}             --> Enter pour continuer${N}"; read
+echo -e "Exécution de ${E}./PipeShell${N} :"
+echo "----------------------------------------"
+echo -e "Quelque soit la commande, c'est ${E}ps aux | grep root | wc -l${N} qui est exécuté"
+echo -e "${E}exit${N} pour terminer"
+echo
+./PipeShellErr
+echo -e "${C}             --> Enter pour continuer${N}"; read

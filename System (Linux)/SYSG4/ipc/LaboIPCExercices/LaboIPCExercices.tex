@@ -1,0 +1,49 @@
+\lhead{ Labo I.P.C. - Exercices }
+
+\begin{list}{+}{}
+
+
+\item Ipc014: 
+Définissez une section critique qu'un seul process peut accéder à la fois. Écrire un process qui utilise cette section critique. Immédiatement après y être entré, et juste avant d'en sortir, il affiche '1'. Écrire un deuxième process qui utilise la même section critique. De la même façon, il affiche '2'.
+Quelle sera la séquence logique des caractères 1 et 2 qui vont s'afficher ?
+
+\item Ipc029 :
+Écrivez 3 process. Synchronisez ces process de telle façon que le process 3 ne peut s'exécuter que quand les process 1 et 2 sont terminés. L'ordre de lancement des process est quelconque. Prouvez que votre synchronisation est correcte. Vous devez utiliser les sémaphores SystemV pour résoudre cet exercice.
+
+\item Ipc031 :
+Soient deux processus; le premier affichant des caractères A à raison de 1 par seconde, le deuxième affichant des caractères B à raison de 1 par seconde.
+Réalisez exactement l'alternance AA B AA B AA B AA B AA B AA B ... par synchronisation des deux processus.
+
+\item Ipc032 :
+Un process crée une réserve de N cacahouètes. N est un nombre compris entre 1000 et 2000. 3 processus fils sont des mangeurs de cacahouètes (M à la fois). M est un nombre aléatoire compris entre 100 et 200. Les processus fils affichent sur 3 lignes "je suis le processus <pid> , je vole M cacahuètes, je pars". Les fils meurent quand il ne reste plus suffisament de cacahouètes dans la réserve. Le parent meurt quand les 3 fils sont morts. Les messages ne peuvent pas être mélangés et le nombre de cachuètes disponibles respecté. Vous ne pouvez pas utiliser de mémoire partagée dans cet exercice.
+%%
+
+\item Ipc046 :
+Soient deux processus qui affichent respectivement les caractères A et B à répétition. Arrangez-vous pour obtenir un affichage alterné des deux lettres.
+%%\item Ipc047 :
+%%Soient deux processus. Le premier processus lit un caractère au clavier, le deuxième l'affiche à l'écran. A chaque nouvelle lecture au clavier, le caractère est affiché une fois. Vous ne pouvez pas utiliser de mémoire partagée.
+
+\item Ipc059 :
+Soient deux processus qui affichent respectivement \fbox{bonjour} et \fbox{le monde} à la réception du signal SIGUSR1. Arrangez-vous pour que la phrase \fbox{bonjour le monde} soit toujours écrite dans le bon ordre.
+%%\item Ipc060 :
+%%Soient deux processus. Le premier process A execute deux fonctions A1 et A2, le deuxième B, 
+%%les deux fonctions B1 et B2. Il faut s'assurer que A1 est exécuté avant B2 et que B1 est exécuté avant A2. Trouvez une solution qui ne provoque jamais d'interblocage.
+% Autre problème de synchronisation : le rendez-vous (Le premier process A execute deux 
+% fonctions A1 et A2, le deuxième B, les deux fonctions B1 et B2. Il faut s'assurer que A1 est
+% exécuté avant B2 et que B1 est exécuté avant A2. Trouvez une solution qui ne provoque jamais
+% d'interblocage + autres Systèmes d'exploitation, collection Synthex.
+% Afficher ce que le serveur ssh envoie.
+% signaux aux process bloqués ? Comment sont-ils choisis par l'ordonnanceur ?
+% shell qui affiche "redirection ambigüe" avec les pipes et les redirections
+
+
+
+%\item Ipc009: 
+%Écrivez un processus qui crée une structure chaînée sous forme de liste au sein d'un tableau situé dans une mémoire partagée. Écrivez un second processus qui relit les informations de la liste chaînée créée par le précédent dans l'ordre du chaînage. La structure chaînée contient deux éléments : un pointeur sur le maillon suivant et un pointeur vers une donnée du processus. Cela fonctionne-t-il ? Pourquoi ? Faites en sorte que cela fonctionne.
+
+
+%Écrire un programme Affiche.c qui affiche, en boucle, les données contenues dans les mémoires partagées comprises entre 100 et 119 si elles existent. Lancer plusieurs exécutions du programme Travail.c et une de Affiche.c et admirer le résultat 
+%Remarques : Les statistiques se trouvent dans /proc/[pid]/stat. La définition de ces informations se trouvent dans man proc. La fonction system() en c exécute une ligne de commande en bash.
+\end{list}
+
+

@@ -1,0 +1,37 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 01-01 - fork  clonage et adoption }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrivez un programme qui se clone et ensuite affiche son pid, le contenu et l'adresse d'une variable locale. Vérifiez l'ordre d'exécution des process, le contenu et l'adresse de la variable. Inversez l'ordre des affichages en utilisant la fonction sleep. Ce résultat est-il déterministe ? Autrement dit, obtiendra-t-on toujours ces mêmes valeurs ?
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0101/SOURCES/Fork.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Une fois le process fils crée, les deux process sont indépendants. 
+\item Chaque process a son propre espace d'adressage, il n'y a pas de partage de la variable locale.
+\item L'adresse de la variable est une adresse relative à l'espace d'adresseage de chaque processus, les espaces sont séparés physiquement.
+\item Le shell attend que son fils soit terminé avant d'envoyer le prompt, il n'attend pas son petit-fils. Selon l'ordonnancement, il se peut qu'on ne voit pas l'affichage du prompt, mais ce dernier a bien eu lieu. Pour obtenir un affichage de prompt tardif, on peut ajouter sleep(1) dans le code du fils (cela dépendra du nombre d'autres processus prioritaires dans le système).
+\item L'appel système exit est indispensable chez le fils, sinon le process fils continue et affiche encore deux lignes de plus. 
+\item L'ordre des impressions n'est pas garanti.
+\end{itemize}
+\subsection{En roue libre}
+\begin{itemize}
+\item Vérifiez le comportement pour les variables de classe d'allocation statique et dynamique.
+\item Adaptez cet exemple, en illustrant l'adoption par init.
+\end{itemize}
+\newpage

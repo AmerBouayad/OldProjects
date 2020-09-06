@@ -1,0 +1,31 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 05-02 - pipe et shell - à corriger}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Ce programme est erroné. Il devrait exécuter la commande \verb+cat /etc/passwd | cut -f6 -d ':'| sort+ ou la commande exit pour terminer.\\
+Vérifiez-en le comportement et expliquez le. Terminez en corrigeant les erreurs.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0502/SOURCES/PipeShellErr.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Une ligne avec 3 commandes et 2 pipes --> 3 fork() et 2 pipe().
+\item Pas de wait entre les fork() : ces process doivent s'exécuter 'en même temps'.
+\item N'oublier aucun close, y compris chez le père.
+\item Les close() avant le wait() chez le père sinon deadlock !
+\end{itemize}
+\newpage

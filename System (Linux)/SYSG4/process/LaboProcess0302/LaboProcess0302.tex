@@ -1,0 +1,31 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 03-02 - exec et sécurité }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 02/2015 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Créez un fichier appelé Confidentiel qui contient le mot 'CONFIDENTIEL'. 
+Écrivez un programme Conf qui affiche le contenu du fichier appelé Confidentiel en chargeant l'exécutable de la commande cat. 
+Modifiez les droits de Confidentiel et de Conf de telle façon que personne d'autre que vous ne puisse afficher le contenu du fichier appelé Confidentiel via la commande cat, mais que tout le monde puisse afficher le contenu en exécutant le programme Conf.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0302/SOURCES/Conf.c}
+
+\subsection{Commentaires}
+
+\begin{list}{.}{}
+\item Cette solution est dangereuse. exec et SUID ne vont pas bien ensemble
+\item Un utilisateur user1 peut se faire passer pour l'utilisateur propriétaire pour d'autres commandes que cat en utilisant le programme Conf.
+\end{list}
+%Renommez votre Makefile et faites un clean
+\newpage

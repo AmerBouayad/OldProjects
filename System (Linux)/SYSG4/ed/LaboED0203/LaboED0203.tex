@@ -1,0 +1,86 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 02-03 - Structure F.S. - mkfs, debugfs}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap - Installation Classique \\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Être capable de créer un F.S. et de l'utiliser.\\
+Cet exercice de laboratoire ne sera pas automatisé. Vous ne devez pas créer de script Demo.
+
+\subsection{Manipulation}
+
+Cette partie du laboratoire se fait en tant que administrateur. Soyez très prudent et réfléchissez aux commandes que vous tapez !
+N'utilisez le mode administrateur que quand c'est indispensable.\\
+Demandez le mot de passe root au responsable du laboratoire.
+
+\subsubsection{Partitionner un disque et formater les partitions}
+
+Vous savez partitionner un disque. Pour que ces partitions soient utilisables, il faut y inscrire la structure d'un F.S. de votre choix. (=formater les partitions)
+
+Adaptez sdb, sdc, sdd, ... suivant votre situation.
+
+A l'aide de fdisk, obtenez deux partition de même taille <= 2Gib\\
+formatez-la première en ext2.
+
+\begin{lstlisting}
+fdisk -l
+mkfs.ext2 /dev/sd??
+\end{lstlisting}
+
+En lisant l'output fourni avec la commande mkfs.ext2, répondez aux questions suivantes : 
+\begin{enumerate}
+\item Combien de fichiers pourriez-vous avoir au maximum sur ce F.S. ?
+\item Quelle est la taille oar défaut d'un bloc ?
+\item Á combien de blocs avez-vous droit ?
+\item Formatez en ext2 l'autre partition en fixant la taille de bloc à 1Kib (man mkfs.ext2) et comparez les valeurs obtenues
+\end{enumerate}
+
+Copier dans ce deuxième F.S. un petit(<1K),  un gros(<10K) et un très gros(>7M) fichiers. Pour ce dernier, les commandes \verb+yes+ (attention, ça va très vite ...) ls -lR ... redirigées vous permet de créer cela facilement.
+\begin{lstlisting}
+mkdir disk		# créer un point de montage
+mount /dev/sdb2 disk	# monter la partition choisie
+cp petit disk/
+cp gros disk/
+cp tresgros disk/
+\end{lstlisting}
+
+Utilisez debugfs pour décrire le F.S.
+
+\begin{lstlisting}
+/sbin/debugfs /dev/sdb2
+help # donne la liste des commandes
+quit # sortir de debugfs
+\end{lstlisting}
+
+\begin{enumerate}
+\item (debugfs)ls -l : quels sont les numéros d'inode de petit et de gros ?
+\item (debugfs)stat petit : Combien de blocs petit utilise-t'il ? et gros et tresgros ?
+\item Quels sont les numéros de blocs utilisés par petit et gros et tresgros ?
+\item (debugfs)icheck : vérifier qu'un bloc appartient bien à l'inode supposé
+\item (debugfs)ncheck : vérifier qu'un inode représente bien le fichier supposé
+\item (debugfs)ffb : le premier bloc libre
+\item (debugfs)ffi : le premier inode libre
+\item (debugfs)undel : restaure un fichier
+\item (debugfs)stats : Le contenu du superbloc, combien d'inodes y a-t-il par groupe ?
+\item (debugfs)quit : pour terminer
+\item Pourriez-vous dessiner ce F.S. avec les bons numéros d'inodes et de blocs ?
+\end{enumerate}
+
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item debugfs permet de lire et écrire la structure d'un F.S. de type ext.
+\item debugfs permet de voir le chaînage des blocs dans le détail
+\end{itemize}
+
+\newpage

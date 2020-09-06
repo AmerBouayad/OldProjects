@@ -1,0 +1,7 @@
+Quelques regexp/commandes vim que j'ai utilisé après avoir copié-collé du pdf:
+supprimer les numéros en début de ligne:
+%s/^[0-9]\+//g
+suprimmer les lignes vides:
+:g/^$/d
+supprimer tous les espaces (il faudra en rajouter à la main après.......)
+:%s/ //g

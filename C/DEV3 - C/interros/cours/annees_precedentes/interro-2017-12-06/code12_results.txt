@@ -1,0 +1,20 @@
+Résultat de la compilation: 
+code12.cpp: In copy constructor ‘Licorne::Licorne(const Licorne&)’:
+code12.cpp:12:29: warning: unused parameter ‘a’ [-Wunused-parameter]
+     Licorne(const Licorne & a) // il y avait une erreur dans cette ligne: A au lieu de Licorne
+                             ^
+code12.cpp: In member function ‘Licorne& Licorne::operator=(const Licorne&)’:
+code12.cpp:20:41: warning: unused parameter ‘a’ [-Wunused-parameter]
+     Licorne & operator=(const Licorne & a)
+                                         ^
+code12.cpp: In function ‘void f(Licorne)’:
+code12.cpp:26:16: warning: unused parameter ‘a’ [-Wunused-parameter]
+ void f(Licorne a) {}
+                ^
+code12.cpp: In function ‘void g(Licorne&)’:
+code12.cpp:27:18: warning: unused parameter ‘a’ [-Wunused-parameter]
+ void g(Licorne & a) {}
+                  ^
+(la compilation a réussie)
+Résultat de l'exécution: 
++ r - + - 

@@ -1,0 +1,8 @@
+Résultat de la compilation: 
+code1.cpp: In function ‘std::ostream& operator<<(std::ostream&, const Integer&)’:
+code1.cpp:25:5: warning: no return statement in function returning non-void [-Wreturn-type]
+     }
+     ^
+(la compilation a réussie)
+Résultat de l'exécution: 
+4294967295

@@ -1,0 +1,34 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 02-01 - wait4 }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrivez un programme Wait4 qui crée un process fils. \\
+Si l'argument est u, ce programme crée un process fils qui effectue le calcul de $10^6$ sinus de nombre aléatoires.\\
+Si l'argument est s, ce programme crée un process fils qui effectue l'impression de $10^6$ caractères a\\
+Le père attend la fin de son fils et affiche les ressources consommées par son fils.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0201/SOURCES/Wait4.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item L'argument u (pour utilisateur) demande beaucoup de ressources utilisateur sans faire appel au S.E 
+\item L'argument s (pour système) demande beaucoup de ressources utilisateur et fait appel au S.E avec l'appel système write.
+\item On a choisi ici d'écrire dans un périphérique /dev/null qui reçoit les informations mais ne les utilise pas. Ceci évite un affichage de a à l'écran qui prend beaucoup de temps.
+\item La structure rusage peut être lue via "man getrusage".
+\item Le préfixe time permet de demander au shell la consommation d'une commande (man time).
+\end{itemize}
+\newpage

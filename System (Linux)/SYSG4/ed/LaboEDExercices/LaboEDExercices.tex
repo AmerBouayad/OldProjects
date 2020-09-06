@@ -1,0 +1,115 @@
+\lhead{ Labo ED - Exercices}
+
+\begin{list}{+}{}
+
+\item ED005: 
+Réécrivez la commande head en c et baptisez-le Mhead. Votre Mhead doit pouvoir réaliser les fonctions équivalentes de head dans les situations suivantes : Mhead, ls | Mhead, Mhead > fichier, ps | Mhead >>fichier. Utilisez man pour comprendre ce que fait la commande head.
+
+\item ED009: 
+Réécrivez la commande cat en c et baptisez-le Mcat.
+Donnez ensuite toutes les étapes que vous devez effectuer pour créer un fichier confidentiel contenant 'phrase confidentielle' que VOUS SEUL pouvez lire / écrire.
+Donner les droits au programme Mcat de telle façon que tous puissent exécuter Mcat qui permettra de visualiser TOUS les fichiers que VOUS pouvez lire notamment le fichier confidentiel.
+
+\item ED010: 
+Imaginez un exemple qui prouve que les droits d'accès sont vérifiés uniquement à l'open d'un fichier.
+
+\item ED011: 
+Écrivez un programme qui crée un nouveau fichier. Ce fichier contient seulement un 'a' en position 0, un 'b' en position 1000 et un 'c' en position 10000. Imaginez une technique pour connaître la taille des blocs de votre système de fichiers et déduisez la place occupée par le fichier que vous venez de créer. Vérifiez avec la commande du. Même question si vous écrivez 'a' en 0, 'b' en 70000 ? Même question si vous écrivez 'a' en 0, 'b' en 500000 ? Même question si vous écrivez 'a' en 0, 'b' en 1000000000 ? Expliquez en détail la réponse obtenue.
+
+\item ED013: 
+Écrivez un programme qui donne toute l'arborescence qui se trouve en dessous d'un répertoire donné en paramètre. Vous le baptiserez Mtree. Vous afficherez uniquement les noms des répertoires, pas les noms des fichiers. Un décalage d'un espace vers la droite symbolisera qu'un répertoire est compris dans un autre répertoire. Par exemple :
+\begin{verbatim}
+\
+ home
+  g12345
+   projet
+   systeme
+  g23456
+   projet
+...
+\end{verbatim}
+
+
+\item ED020: 
+Un processus exécute le code correspondant à ces 3 appels :
+\begin{lstlisting}[frame=trBL]{}
+fd1 = open(Nomf, OFlags);
+fd2 = dup (fd1);
+fd3 = open(Nomf,OFlags);
+\end{lstlisting}
+Dessinez la table des descripteurs de fichier correspondant à ce processus après l'exécution des lignes ci-dessus. Écrivez un programme qui montre que votre réponse est correcte.
+
+
+\item ED023: 
+LienFich est un lien vers le fichier Fich. Comment faites-vous pour savoir s'il s'agit d'un lien soft ou d'un lien hard ?
+
+
+\item ED027: 
+Décrivez le comportement de ce programme:
+\begin{lstlisting}[frame=trBL]{}
+main( )
+{	int f;
+	f=open("fichier",O_WRONLY|O_CREAT,0777);
+	dup2(f,1);
+	close(f);
+	printf("Hello world\n");
+	exit(0);
+}
+\end{lstlisting}
+
+
+\item ED037: 
+Voici une série de commandes effectuées par l'utilisateur root
+\lstset{language=bash,frame=trBL}
+\begin{lstlisting}[frame=trBL]{}
+mkfs.ext /dev/fd0
+mount /dev/fd0 flop
+./CreeFich
+cd flop
+ln -s fich fs
+ln fich fh
+\end{lstlisting}
+
+Où le programme CreeFich est le résultat de la compilation du programme CreeFich.c :
+
+\lstset{language=c,frame=trBL}
+\begin{lstlisting}[frame=trBL]{}
+int main() {
+	char * buffer = "Hello";
+	int h;
+	h=open("flop/fich",O_WRONLY|O_CREAT,0644);
+	write(h,buffer,5);
+	lseek(h,12000,SEEK_SET);
+	write(h,buffer,5);
+	close(h);
+	exit(0);
+}
+\end{lstlisting}
+
+Réalisez une description complète et précise du F.S. ext qui résulte de l'exécution de ces commandes sachant que la taille des blocs est de 1K.
+
+
+\item ED048: 
+Créer un minidisk contenant un FS de type ext2. Copiez sur ce minidisk un répertoire qui contient deux fichiers simples. Décrivez le minidisk correspondant (tableau d'inodes tableau de blocs) en utilisant les résultats donnés par debugfs.  
+
+
+\item ED057:
+Écrivez un programme qui affiche les caractéristiques des partitions primaires d'un disque en précisant si ces partitions sont bootables.  
+
+
+\item ED064: 
+Écrivez un programme qui construit une table contenant deux champs. Le premier champ est la taille d'un fichier contenant uniquement des caractères 'y'. Le deuxième champ est le nombre de blocs utilisés pour mémoriser ce fichier sur le disque. Exécutez ce programme avec 10, 100, 200, 300, 1000, 2000, 3000, 10000, 20000, 30000, 100000, 200000, 300000,... caractères. Expliquez le résultat obtenu. 
+ 
+
+\item ED073:
+Réécrivez la commande cp f1 f2 en c et baptisez-le Mcp. Votre Mcp ne doit réaliser que la copie d'un seul fichier vers un seul fichier. Les noms sont donnés en paramètre.
+
+\item ED079:
+Réécrivez la commande rm en c et baptisez-le Mrm. Votre Mrm doit fonctionner avec un ou plusieurs fichiers donnés en paramètre. 
+
+\item ED086:
+Écrivez, en c, l'équivalent de la commande find /usr -perm 4755.
+
+\end{list}
+
+

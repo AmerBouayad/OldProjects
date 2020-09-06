@@ -1,0 +1,1 @@
+ sed -e  's/^[0-9]*//g' dlnode_utility.h | sed -e 's/^ //g'  > dllist_utility.h

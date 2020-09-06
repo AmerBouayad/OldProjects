@@ -1,0 +1,82 @@
+Résultat de la compilation: 
+code1.cpp: In function ‘void f(A)’:
+code1.cpp:19:10: warning: unused parameter ‘a’ [-Wunused-parameter]
+ void f(A a)
+          ^
+(la compilation a réussie)
+Résultat de l'exécution: 
+GET TO THE CHOPPAAA !!!
+==18703== Mismatched free() / delete / delete []
+==18703==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==18703==    by 0x108D55: A::~A() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108BA2: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Address 0x5ae1c80 is 0 bytes inside a block of size 20 alloc'd
+==18703==    at 0x4C2D97F: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==18703==    by 0x108D1D: A::A(int) (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108B7A: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703== 
+==18703== Invalid read of size 4
+==18703==    at 0x108D8D: A::print() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108BAE: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Address 0x5ae1c80 is 0 bytes inside a block of size 20 free'd
+==18703==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==18703==    by 0x108D55: A::~A() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108BA2: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Block was alloc'd at
+==18703==    at 0x4C2D97F: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==18703==    by 0x108D1D: A::A(int) (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108B7A: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703== 
+0 0 0 0 0 
+==18703== Invalid read of size 4
+==18703==    at 0x108D8D: A::print() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108BEF: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Address 0x5ae1c80 is 0 bytes inside a block of size 20 free'd
+==18703==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==18703==    by 0x108D55: A::~A() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108BA2: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Block was alloc'd at
+==18703==    at 0x4C2D97F: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==18703==    by 0x108D1D: A::A(int) (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108B7A: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703== 
+0 0 0 0 0 
+==18703== Invalid read of size 4
+==18703==    at 0x108D8D: A::print() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108C11: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Address 0x5ae1c80 is 0 bytes inside a block of size 20 free'd
+==18703==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==18703==    by 0x108D55: A::~A() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108BA2: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Block was alloc'd at
+==18703==    at 0x4C2D97F: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==18703==    by 0x108D1D: A::A(int) (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108B7A: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703== 
+0 0 0 0 0 
+==18703== Invalid free() / delete / delete[] / realloc()
+==18703==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==18703==    by 0x108D55: A::~A() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108C33: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Address 0x5ae1c80 is 0 bytes inside a block of size 20 free'd
+==18703==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==18703==    by 0x108D55: A::~A() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108BA2: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Block was alloc'd at
+==18703==    at 0x4C2D97F: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==18703==    by 0x108D1D: A::A(int) (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108B7A: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703== 
+==18703== Invalid free() / delete / delete[] / realloc()
+==18703==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==18703==    by 0x108D55: A::~A() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108C3F: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Address 0x5ae1c80 is 0 bytes inside a block of size 20 free'd
+==18703==    at 0x4C2E31B: operator delete(void*) (vg_replace_malloc.c:576)
+==18703==    by 0x108D55: A::~A() (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108BA2: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==  Block was alloc'd at
+==18703==    at 0x4C2D97F: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==18703==    by 0x108D1D: A::A(int) (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703==    by 0x108B7A: main (in /home/cabal/Documents/DEV3/interros/cours/annees_precedentes/interro-2016-10-17/code1)
+==18703== 

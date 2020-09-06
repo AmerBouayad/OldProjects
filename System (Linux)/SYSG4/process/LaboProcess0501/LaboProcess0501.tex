@@ -1,0 +1,31 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 05-01 - pipe et shell }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 07/2011 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrivez un shell simplifié, seulement capable d'exécuter toujours la commande \verb+ps aux | grep root | wc -l+ ou la commande exit pour terminer. Ce shell ne reconnaît que la commande exit.
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0501/SOURCES/PipeShell.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Une ligne avec 3 commandes
+\item Le shell, 3 fork() et 2 pipe() = 16 close !
+\item N'oublier aucun close, y compris chez le père.
+\item Pas de wait entre les fork() : ces process doivent s'exécuter 'en même temps'.
+\item Les close() avant le wait() chez le père sinon deadlock !
+\end{itemize}
+\newpage

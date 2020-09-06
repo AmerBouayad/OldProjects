@@ -1,0 +1,32 @@
+Résultat de la compilation: 
+code7.cpp: In instantiation of ‘void forall(Container, Fct) [with Container = MyVector<int>; Fct = main()::<lambda(int)>]’:
+code7.cpp:20:6:   required from here
+code7.cpp:10:5: error: ‘begin’ was not declared in this scope
+     for (auto e : c)
+     ^~~
+code7.cpp:10:5: note: suggested alternative:
+In file included from /usr/include/c++/7/string:51:0,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code7.cpp:1:
+/usr/include/c++/7/bits/range_access.h:105:37: note:   ‘std::begin’
+   template<typename _Tp> const _Tp* begin(const valarray<_Tp>&);
+                                     ^~~~~
+code7.cpp:10:5: error: ‘end’ was not declared in this scope
+     for (auto e : c)
+     ^~~
+code7.cpp:10:5: note: suggested alternative:
+In file included from /usr/include/c++/7/string:51:0,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from code7.cpp:1:
+/usr/include/c++/7/bits/range_access.h:107:37: note:   ‘std::end’
+   template<typename _Tp> const _Tp* end(const valarray<_Tp>&);
+                                     ^~~
+(ERREUR: la compilation a échouée!)

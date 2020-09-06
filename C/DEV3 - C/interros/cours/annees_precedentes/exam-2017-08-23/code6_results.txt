@@ -1,0 +1,41 @@
+Résultat de la compilation: 
+code6.cpp: In copy constructor ‘A::A(const A&)’:
+code6.cpp:10:17: warning: unused parameter ‘a’ [-Wunused-parameter]
+     A(const A & a)
+                 ^
+code6.cpp: In copy constructor ‘B::B(const B&)’:
+code6.cpp:26:17: warning: unused parameter ‘b’ [-Wunused-parameter]
+     B(const B & b)
+                 ^
+code6.cpp: In copy constructor ‘C::C(const C&)’:
+code6.cpp:42:5: warning: base class ‘class B’ should be explicitly initialized in the copy constructor [-Wextra]
+     C(const C & c)
+     ^
+code6.cpp:42:5: warning: base class ‘class A’ should be explicitly initialized in the copy constructor [-Wextra]
+code6.cpp:42:17: warning: unused parameter ‘c’ [-Wunused-parameter]
+     C(const C & c)
+                 ^
+code6.cpp: In function ‘void f(A)’:
+code6.cpp:51:10: warning: unused parameter ‘a’ [-Wunused-parameter]
+ void f(A a) {}
+          ^
+(la compilation a réussie)
+Résultat de l'exécution: 
++B
++A
++C
+
+rA
+-A
+
++B
++A
++C
+
+-C
+-A
+-B
+
+-C
+-A
+-B

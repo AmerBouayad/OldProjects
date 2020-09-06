@@ -1,0 +1,39 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ ED - LaboED 01-04 - fdisk automatisé}}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 43.2 Leap - Installation Classique \\\hline
+Date :		& 08/2018\\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Automatiser le partitionnement d'un disque. \\
+
+
+N'utilisez que le stick usb que vous partitionnez, ôtez tous les autres
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item Vous pouvez automatiser simplement fdisk dans un script en lui précisant les réponses avec la double direction d'entrée <<. En ligne de commande cela peut également être fait par la redirection de l'entrée standard < . En effet c'est sur stdin que fdisk lit vos commandes. 
+\item Soyez toujours très prudents quand vous effectuez des manipulations en administrateur. Le script Demo devra être exécuté en administrateur. Il faudra vérifier cela, de plus le nom du pilote/device n'est pas identique sur chacune des machines. Une erreur de nom peut compromettre votre système d'exploitation !
+\item Demandez le mot de passe root au responsable du laboratoire.
+\end{itemize}
+
+\subsection{En roue libre}
+Adaptez le script Demo pour automatiser le partitionnement suivant
+
+\begin{itemize}
+\item création d'un nouvelle table de partitions DOS contenant :
+\item une partition primaire 1 < 1Gib
+\item une partition primaire 2 étendue de tout le reste du stick usb
+\item une partition logique 5 < 1 Gib
+\end{itemize}
+Les valeurs par défaut obtenues par la touche <CR>  correspondent à une ligne blanche dans le fichier de commandes 
+\newpage

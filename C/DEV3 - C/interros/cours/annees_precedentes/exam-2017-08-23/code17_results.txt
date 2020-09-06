@@ -1,0 +1,20 @@
+Résultat de la compilation: 
+code17.cpp: In copy constructor ‘A::A(const A&)’:
+code17.cpp:10:17: warning: unused parameter ‘a’ [-Wunused-parameter]
+     A(const A & a)
+                 ^
+code17.cpp: In member function ‘A& A::operator=(const A&)’:
+code17.cpp:18:29: warning: unused parameter ‘a’ [-Wunused-parameter]
+     A & operator=(const A & a)
+                             ^
+code17.cpp: In function ‘void f(A)’:
+code17.cpp:24:10: warning: unused parameter ‘a’ [-Wunused-parameter]
+ void f(A a) {}
+          ^
+code17.cpp: In function ‘void g(A&)’:
+code17.cpp:25:12: warning: unused parameter ‘a’ [-Wunused-parameter]
+ void g(A & a) {}
+            ^
+(la compilation a réussie)
+Résultat de l'exécution: 
++A rA -A+A -A

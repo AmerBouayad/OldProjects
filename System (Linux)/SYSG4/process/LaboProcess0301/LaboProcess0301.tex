@@ -1,0 +1,34 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Process - LaboProcess 03-01 - exec }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 42.3 Leap Installation Classique \\\hline
+Date :		& 02/2015 \\\hline
+\end{tabular}
+
+\subsection{Énoncé}
+
+Écrivez un programme en C qui réalise la même chose que \\
+\fbox{gcc aff.c -o aff \&\& ./aff Message}\\
+Le programme aff affiche le premier argument passé (Message)\\
+Si aff.c contient une erreur de compilation, un message d'erreur est affiché. 
+
+\subsection{Une solution}
+
+\lstinputlisting{LaboProcess0301/SOURCES/cg.c}
+\lstinputlisting{LaboProcess0301/SOURCES/aff.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item exec est le loader qui permet de charger un programme exécutable en mémoire.
+\item exec REMPLACE le process courant par le programme exécutable passé comme premier argument. Le process courant est entièrement détruit. Ceci justifie le fork et l'absence de test après exec gcc pour afficher le message d'erreur.
+\item gcc, comme toute commande, se termine par exit(0) si il n'y a pas d'erreur. C'est une convention.
+\item l'opérateur \&\& du bash est un AND. La commande qui suit le \&\& est exécutée ssi la première se termine par un exit(0) qui veut dire "tout s'est bien passé"
+\end{itemize}
+\newpage

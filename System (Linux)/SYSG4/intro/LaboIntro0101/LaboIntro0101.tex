@@ -1,0 +1,64 @@
+\lstset{language=c}
+\renewcommand{\titre}{\textcolor{blue}{ Intro - LaboIntro 01-01 - un Makefile }}
+
+\lhead{ \titre }
+\section{{\titre} }
+
+\begin{tabular}{|l|l|}
+\hline
+Titre : 	& \titre \\\hline
+Support : 	& OS 43.2 Leap\\\hline
+Date :		& 08/2018 \\\hline
+\end{tabular}
+
+\subsection{Make}
+L'utilitaire \emph{make} permet de déterminer quelles parties d'un programme complexe nécessitent une compilation et exécute les commandes qui lui auront été renseignées pour compiler. Nous allons l'utiliser dans ce cadre.
+
+Un Makefile est un fichier contenant des règles répondant au format suivant :\\
+
+%\lstinputlisting{LaboIntro0101/regle}
+\emph{cible : pré-requis ...}\\
+\emph{<tab> commande }\\
+
+
+\emph{make} sait ainsi que pour produire \emph{cible} il aura besoin de \emph{pré-requis} et devra exécuter \emph{commande}
+
+\subsection{Énoncé}
+
+Écrivez un Makefile contenant plusieurs règles.
+
+La première (qui est la règle par défaut) exécute votre programme \emph{TestMake}. Ce petit exécutable ne fait rien de spécial, il affiche trois représentations d'une même  valeur. \\ Le fichier exécutable TestMake doit être généré si il n'existe pas ou n'est pas à jour. Vous allez avoir besoin d'une règle pour décrire cela. Comme contrainte, le code TestMake.c utilise un fichier d'include \emph{MonInclude.h}.
+
+Vous écrirez également la règle ou cible \emph{clean} qui n'a aucun pré-requis et sert juste à supprimer l'exécutable \emph{TestMake} pour revenir à une situation de départ ou "faire du propre", comme son nom l'indique.
+
+Exécutez ensuite manuellement la commande \texttt{make clean} suivie de deux fois la commande \texttt{make}. 
+
+Observez et justifiez la différence de comportement entre ces deux dernières exécutions. 
+
+Modifiez le fichier .c ou/et le fichier .h (ou modifiez leur date par la commande \emph{touch <fichier>}).
+
+Quel comportement génère la commande \texttt{make} maintenant ?
+
+\newpage % ne sait pas comment empècher les sautx page au milieu du code ...
+\subsection{Une solution}
+
+Voir dans LaboIntro0101/SOURCES
+
+\lstinputlisting{LaboIntro0101/SOURCES/Makefile}
+\lstinputlisting{LaboIntro0101/SOURCES/MonInclude.h}
+\lstinputlisting{LaboIntro0101/SOURCES/TestMake.c}
+
+\subsection{Commentaires}
+
+\begin{itemize}
+\item nous choisissons le nom Makefile pour le fichier makefile  c'est un des noms de fichier que l'outil \texttt{make} emploie par défaut.
+\item un programme ne doit pas être recompilé à chaque exécution.
+\item le programme nécessite d'être recompilé si le fichier .c ou le fichier .h dont il dépend, ont une date plus récente que l'exécutable. Ceci est exprimé par une règle et sera interprété par l'outil \texttt{make}.
+\item un pré-requis dans une règle de Makefile n'est pas toujours un nom de fichier il peut s'agir d'un nom de règle.
+\end{itemize}
+
+\subsection{Voir}
+Pour une description complète de l'outil \texttt{make}
+
+GNU Make : (Stallman, McGrath, Smith)
+\newpage

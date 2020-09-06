@@ -1,0 +1,18 @@
+Résultat de la compilation: 
+code13.cpp: In member function ‘virtual A& A::operator=(const A&)’:
+code13.cpp:7:61: warning: no return statement in function returning non-void [-Wreturn-type]
+ virtual A& operator=(const A&) { cout << "Aff␣A" << endl ;}
+                                                             ^
+code13.cpp: In member function ‘virtual B& B::operator=(const B&)’:
+code13.cpp:12:61: warning: no return statement in function returning non-void [-Wreturn-type]
+ virtual B& operator=(const B&) { cout << "Aff␣B" << endl ;}
+                                                             ^
+code13.cpp: In function ‘int main()’:
+code13.cpp:17:23: warning: variable ‘a2’ set but not used [-Wunused-but-set-variable]
+ A * a1 = new A(); A * a2 = new A();
+                       ^~
+(la compilation a réussie)
+Résultat de l'exécution: 
+Aff␣B
+Aff␣A
+Aff␣A

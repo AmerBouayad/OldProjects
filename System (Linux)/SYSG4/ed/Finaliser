@@ -1,0 +1,70 @@
+#!/bin/bash
+#NOM    : Finaliser
+#CLASSE : ED - LaboED
+#OBJET  : Finaliser avant mise à disposition
+#HOWTO	: ./Finaliser
+#AUTEUR	: J.C. Jaumain, 07/2011
+# --------------------------------------------------
+# Vérification de l'othographe
+#
+clear
+rep=""
+while [ "$rep" != 'y' -a "$rep" != 'n' ]
+	do
+	clear
+	echo -n "Exécuter une vérification orthographique de tous les .tex ? (y/n)"
+	read rep
+	done
+if [ "$rep" == 'y' ]
+	then
+	x=$(find ./ -name '*.tex')
+	for i in $x
+		do
+		rep=""
+		while [ "$rep" != 'y' -a "$rep" != 'n' ]
+			do
+			clear
+			echo -n "Vérifcation orthographique de $i ? (y/n)"
+			read rep
+			done
+		if [ "$rep" == 'y' ]
+			then
+			aspell -t --encoding='utf-8' -c $i
+			fi
+		done
+	fi
+# --------------------------------------------------
+# test des Makefiles
+#
+clear
+rep=""
+while [ "$rep" != 'y' -a "$rep" != 'n' ]
+	do
+	clear
+	echo -n "Exécuter un make de tous les Makefile ? (y/n)"
+	read rep
+	done
+if [ "$rep" == 'y' ]
+	then
+	x=$(find Labo* -name Makefile)
+	for i in $x; do ( cd ${i%%Makefile}; make || echo -n enter ; read err); done
+	#for i in $x; do ( cd ${i%%Makefile}; make); done
+fi
+# --------------------------------------------------
+# --------------------------------------------------
+# Destruction des fichiers inutiles
+#
+clear
+rep=""
+while [ "$rep" != 'y' -a "$rep" != 'n' ]
+	do
+	clear
+	echo -n "Exécuter un make clean de tous les Makefile ? (y/n)"
+	read rep
+	done
+if [ "$rep" == 'y' ]
+	then
+	x=$(find . -name Makefile)
+	for i in $x; do ( cd ${i%%Makefile}; make clean); done
+	fi
+# --------------------------------------------------

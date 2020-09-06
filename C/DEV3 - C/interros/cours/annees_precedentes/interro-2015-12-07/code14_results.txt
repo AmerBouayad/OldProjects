@@ -1,0 +1,8 @@
+Résultat de la compilation: 
+(la compilation a réussie)
+Résultat de l'exécution: 
++A
++B
++A
++C
++D

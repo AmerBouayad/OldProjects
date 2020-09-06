@@ -1,0 +1,20 @@
+Résultat de la compilation: 
+code4.cpp: In member function ‘A A::operator+(int)’:
+code4.cpp:4:72: warning: no return statement in function returning non-void [-Wreturn-type]
+ A operator+(int i){std::cout<<"For␣Maccrage␣we␣march"<<std::endl;}
+                                                                        ^
+code4.cpp:4:17: warning: unused parameter ‘i’ [-Wunused-parameter]
+ A operator+(int i){std::cout<<"For␣Maccrage␣we␣march"<<std::endl;}
+                 ^
+code4.cpp: In member function ‘A A::operator+(A)’:
+code4.cpp:5:78: warning: no return statement in function returning non-void [-Wreturn-type]
+ A operator+(A a){std::cout<<"and␣we␣shall␣know␣no␣fear"<<std::endl;}
+                                                                              ^
+code4.cpp:5:15: warning: unused parameter ‘a’ [-Wunused-parameter]
+ A operator+(A a){std::cout<<"and␣we␣shall␣know␣no␣fear"<<std::endl;}
+               ^
+code4.cpp: In function ‘int main()’:
+code4.cpp:9:3: error: no match for ‘operator+’ (operand types are ‘int’ and ‘A’)
+ i1+a1+a2;//vous ne pouvez pas changer cette ligne
+ ~~^~~
+(ERREUR: la compilation a échouée!)

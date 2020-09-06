@@ -1,0 +1,28 @@
+#!/bin/bash
+#NOM    : Demo
+#CLASSE : Process - LaboProcess 04-02
+#OBJET  : réservé au Makefile
+#AUTEUR	: J.C. Jaumain, 07/2011
+
+C='\033[44m'
+E='\033[32m\033[1m'
+N='\033[0m'
+
+clear
+echo -e "Démonstration du shell avec les commandes ${E}ls -ail &${N} suivie ${E}ls -ail &${N}, de ${E}ls${N} et de ${E}ps${N}"
+echo "------------------------------------------------------------------------"
+echo
+./ShellBack <<EOF
+ls -ail &
+ls -ail &
+ls
+ps
+exit
+EOF
+echo -e "${C}             --> Enter pour continuer${N}"; read
+#clear
+echo -e "Démonstration libre du shell (${E}exit${N} pour terminer)"
+echo "-------------------------------------------------"
+echo
+./ShellBack
+

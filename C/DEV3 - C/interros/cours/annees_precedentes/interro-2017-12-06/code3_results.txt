@@ -1,0 +1,28 @@
+Résultat de la compilation: 
+code3.cpp: In function ‘int main()’:
+code3.cpp:15:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int j = 0; j < v.size(); j++)
+                     ~~^~~~~~~~~~
+In file included from /usr/include/c++/7/vector:62:0,
+                 from code3.cpp:2:
+/usr/include/c++/7/bits/stl_construct.h: In instantiation of ‘void std::_Construct(_T1*, _Args&& ...) [with _T1 = A; _Args = {}]’:
+/usr/include/c++/7/bits/stl_uninitialized.h:527:18:   required from ‘static _ForwardIterator std::__uninitialized_default_n_1<_TrivialValueType>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = A*; _Size = long unsigned int; bool _TrivialValueType = false]’
+/usr/include/c++/7/bits/stl_uninitialized.h:583:20:   required from ‘_ForwardIterator std::__uninitialized_default_n(_ForwardIterator, _Size) [with _ForwardIterator = A*; _Size = long unsigned int]’
+/usr/include/c++/7/bits/stl_uninitialized.h:645:44:   required from ‘_ForwardIterator std::__uninitialized_default_n_a(_ForwardIterator, _Size, std::allocator<_Tp>&) [with _ForwardIterator = A*; _Size = long unsigned int; _Tp = A]’
+/usr/include/c++/7/bits/stl_vector.h:1347:36:   required from ‘void std::vector<_Tp, _Alloc>::_M_default_initialize(std::vector<_Tp, _Alloc>::size_type) [with _Tp = A; _Alloc = std::allocator<A>; std::vector<_Tp, _Alloc>::size_type = long unsigned int]’
+/usr/include/c++/7/bits/stl_vector.h:285:30:   required from ‘std::vector<_Tp, _Alloc>::vector(std::vector<_Tp, _Alloc>::size_type, const allocator_type&) [with _Tp = A; _Alloc = std::allocator<A>; std::vector<_Tp, _Alloc>::size_type = long unsigned int; std::vector<_Tp, _Alloc>::allocator_type = std::allocator<A>]’
+code3.cpp:14:23:   required from here
+/usr/include/c++/7/bits/stl_construct.h:75:7: error: no matching function for call to ‘A::A()’
+     { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+code3.cpp:6:5: note: candidate: A::A(int)
+     A(int i): i(i) {}
+     ^
+code3.cpp:6:5: note:   candidate expects 1 argument, 0 provided
+code3.cpp:3:8: note: candidate: constexpr A::A(const A&)
+ struct A
+        ^
+code3.cpp:3:8: note:   candidate expects 1 argument, 0 provided
+code3.cpp:3:8: note: candidate: constexpr A::A(A&&)
+code3.cpp:3:8: note:   candidate expects 1 argument, 0 provided
+(ERREUR: la compilation a échouée!)

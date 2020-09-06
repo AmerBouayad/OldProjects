@@ -1,0 +1,25 @@
+#!/bin/bash
+#NOM    : Demo
+#CLASSE : IPC - LaboIPC 02-02
+#OBJET  : réservé au makefile
+#AUTEUR	: J.C. Jaumain, 07/2011
+
+C='\033[44m'
+E='\033[32m\033[1m'
+W='\033[31m\033[1m'
+N='\033[0m'
+clear
+echo "Démonstration du programme AffContinu.c"
+echo -e "Remarque : le caractère choisi, suivi de enter est affiché de façon continue"
+echo -e "le caractère ${E}q${N} termine le process"
+echo "-----------------------------------------------------------------------"
+echo -e "Exécution de ${E}./AffContinu${N} :"
+./AffContinu
+echo -e "${C}             --> Enter pour continuer${N}"; read
+echo "Programme terminé, les process qui restent sont"
+echo "-----------------------------------------------"
+echo -e "Exécution de ${E}ps${N} :"
+ps
+echo -e "${C}             --> Enter pour continuer${N}"; read
+
+

@@ -1,0 +1,14 @@
+Résultat de la compilation: 
+code11.cpp: In copy constructor ‘B::B(const B&)’:
+code11.cpp:15:1: warning: base class ‘class A’ should be explicitly initialized in the copy constructor [-Wextra]
+ B(const B&) {cout << "cB" << endl ; }
+ ^
+(la compilation a réussie)
+Résultat de l'exécution: 
++A
++B
+cA
+ f 
+´A
+´B
+´A
